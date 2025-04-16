@@ -1,0 +1,10 @@
+Feature: Coordinate-Based Form Automation using OCR # features/login.feature:1
+
+  Scenario: Successful login using coordinates detected by OCR                                          # features/login.feature:3
+    Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR # features/steps/login_steps.py:27
+    When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"                                 # features/steps/login_steps.py:351
+    And I enter "Test@123" using label "Password"                                                       # features/steps/login_steps.py:351
+    And I click using label "Login" and perform OCR                                                     # features/steps/login_steps.py:662
+    And I click using label "Tablets" and perform OCR                                                   # features/steps/login_steps.py:662
+    And I click using label "Samsung Galaxy Tab 10.1" and perform OCR                                   # features/steps/login_steps.py:662
+

@@ -1,0 +1,8 @@
+behave>=1.2.6,<2.0.0
+playwright>=1.40.0,<2.0.0
+# opencv-python==4.9.0.80  # Remove or comment out specific old version
+opencv-python>=4.8.0       # Allow newer versions compatible with NumPy 2.x
+numpy>=1.26.0
+Pillow>=10.2.0
+pytesseract==0.3.13
+easyocr>=1.7.0,<2.0.0

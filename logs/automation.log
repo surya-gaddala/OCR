@@ -1,0 +1,44 @@
+2025-04-16 21:18:47.665 - behave - INFO - Configuration loaded successfully.
+2025-04-16 21:18:47.669 - behave - INFO - Starting Scenario: Successful login using coordinates detected by OCR
+2025-04-16 21:18:49.427 - behave - INFO - Detected page navigation/reload
+2025-04-16 21:19:24.232 - behave - INFO - Step Passed: Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+2025-04-16 21:19:24.441 - behave - INFO - Saved screenshot
+2025-04-16 21:19:51.718 - behave - INFO - OCR completed and CSV updated
+2025-04-16 21:19:54.700 - behave - INFO - Step Passed: When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
+2025-04-16 21:19:54.919 - behave - INFO - Saved screenshot
+2025-04-16 21:19:57.050 - behave - INFO - Step Passed: And I enter "Test@123" using label "Password"
+2025-04-16 21:19:57.263 - behave - INFO - Saved screenshot
+2025-04-16 21:19:58.373 - behave - INFO - Detected page navigation/reload
+2025-04-16 21:20:25.362 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-16 21:20:25.563 - behave - INFO - Saved screenshot
+2025-04-16 21:20:52.981 - behave - INFO - OCR completed and CSV updated
+2025-04-16 21:20:53.367 - behave - INFO - Detected page navigation/reload
+2025-04-16 21:21:19.927 - behave - INFO - Step Passed: And I click using label "Tablets" and perform OCR
+2025-04-16 21:21:20.163 - behave - INFO - Saved screenshot
+2025-04-16 21:21:46.119 - behave - INFO - OCR completed and CSV updated
+2025-04-16 21:22:12.504 - behave - INFO - Step Passed: And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
+2025-04-16 21:22:12.753 - behave - INFO - Saved screenshot
+2025-04-16 21:22:12.754 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
+2025-04-16 21:22:13.508 - behave - INFO - Browser resources cleaned up successfully
+2025-04-16 21:23:03.079 - behave - INFO - Configuration loaded successfully.
+2025-04-16 21:23:03.081 - behave - INFO - Starting Scenario: Successful login using coordinates detected by OCR
+2025-04-16 21:23:04.739 - behave - INFO - Detected page navigation/reload
+2025-04-16 21:23:39.930 - behave - INFO - Step Passed: Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+2025-04-16 21:23:40.164 - behave - INFO - Saved screenshot
+2025-04-16 21:24:06.685 - behave - INFO - OCR completed and CSV updated
+2025-04-16 21:24:09.603 - behave - INFO - Step Passed: When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
+2025-04-16 21:24:09.876 - behave - INFO - Saved screenshot
+2025-04-16 21:24:11.975 - behave - INFO - Step Passed: And I enter "Test@123" using label "Password"
+2025-04-16 21:24:12.277 - behave - INFO - Saved screenshot
+2025-04-16 21:24:13.320 - behave - INFO - Detected page navigation/reload
+2025-04-16 21:24:41.454 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-16 21:24:41.660 - behave - INFO - Saved screenshot
+2025-04-16 21:25:09.342 - behave - INFO - OCR completed and CSV updated
+2025-04-16 21:25:09.715 - behave - INFO - Detected page navigation/reload
+2025-04-16 21:25:36.025 - behave - INFO - Step Passed: And I click using label "Tablets" and perform OCR
+2025-04-16 21:25:36.234 - behave - INFO - Saved screenshot
+2025-04-16 21:26:02.230 - behave - INFO - OCR completed and CSV updated
+2025-04-16 21:26:29.712 - behave - INFO - Step Passed: And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
+2025-04-16 21:26:29.957 - behave - INFO - Saved screenshot
+2025-04-16 21:26:29.958 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
+2025-04-16 21:26:30.265 - behave - INFO - Browser resources cleaned up successfully
