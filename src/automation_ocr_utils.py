@@ -5,11 +5,13 @@ import re
 import difflib
 from pathlib import Path
 from datetime import datetime
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Any
 from playwright.sync_api import sync_playwright
 from fuzzywuzzy import fuzz
 import math
 import os
+import json
+import hashlib
 
 # OCR and Image Processing Libs
 import cv2
@@ -106,34 +108,108 @@ def save_screenshot(page: Page, config, name_prefix: str, bbox: Optional[Dict] =
 
 # --- Image Preprocessing ---
 
-def preprocess_image(config, image_path: Path) -> Optional[np.ndarray]:
-    """Loads and preprocesses the image for OCR based on config."""
-    if not image_path or not image_path.exists(): logger.error(f"Screenshot path invalid: {image_path}"); return None
+# Global OCR reader instances with lazy loading
+_tesseract_reader = None
+_easyocr_reader = None
+_ocr_cache = {}
+_preprocessed_cache = {}
+
+def get_ocr_reader(engine: str = 'easyocr') -> Any:
+    """Get or initialize the OCR reader instance with optimized settings."""
+    global _tesseract_reader, _easyocr_reader
+    
+    if engine.lower() == 'tesseract':
+        if _tesseract_reader is None:
+            logger.info("Initializing Tesseract OCR reader...")
+            _tesseract_reader = pytesseract
+            logger.info("Tesseract OCR Reader initialized")
+        return _tesseract_reader
+    else:
+        if _easyocr_reader is None:
+            logger.info("Initializing EasyOCR reader...")
+            # Enable GPU if available, fallback to CPU
+            try:
+                _easyocr_reader = easyocr.Reader(['en'], gpu=True)
+                logger.info("EasyOCR Reader initialized with GPU support")
+            except Exception as e:
+                logger.warning(f"GPU initialization failed, falling back to CPU: {e}")
+                _easyocr_reader = easyocr.Reader(['en'], gpu=False)
+                logger.info("EasyOCR Reader initialized with CPU")
+        return _easyocr_reader
+
+def get_image_hash(image: np.ndarray) -> str:
+    """Generate a hash for an image to use as cache key."""
+    # Use a faster hashing method for large images
+    if image.size > 1000000:  # For large images
+        resized = cv2.resize(image, (100, 100))
+        return hashlib.md5(resized.tobytes()).hexdigest()
+    return hashlib.md5(image.tobytes()).hexdigest()
+
+def preprocess_image(config: Any, image_path: str) -> Optional[np.ndarray]:
+    """Optimize image preprocessing with enhanced error handling."""
     try:
-        img = cv2.imread(str(image_path)); assert img is not None, "Failed to load image"
-        logger.debug(f"Preprocessing image: {image_path}"); processed_img = img.copy()
-        # Cropping
-        if config.getboolean('Preprocessing', 'crop_enabled', fallback=False):
-            h, w = processed_img.shape[:2]; x = int(w * max(0.0, config.getfloat('Preprocessing', 'crop_x', fallback=0.0)))
-            y = int(h * max(0.0, config.getfloat('Preprocessing', 'crop_y', fallback=0.0))); cw = int(w * min(1.0, config.getfloat('Preprocessing', 'crop_width', fallback=1.0)))
-            ch = int(h * min(1.0, config.getfloat('Preprocessing', 'crop_height', fallback=1.0))); end_x = min(w, x + cw); end_y = min(h, y + ch)
-            if end_y > y and end_x > x: processed_img = processed_img[y:end_y, x:end_x]; logger.debug(f"Cropped image to: x={x}, y={y}, w={end_x-x}, h={end_y-y}")
-            else: logger.warning("Invalid crop dimensions, skipping crop.")
-        # Grayscale
-        if config.getboolean('Preprocessing', 'grayscale', fallback=True):
-            if len(processed_img.shape) == 3: processed_img = cv2.cvtColor(processed_img, cv2.COLOR_BGR2GRAY); logger.debug("Converted image to grayscale.")
-        # Add other preprocessing steps here if needed
-        return processed_img
-    except Exception as e: logger.exception(f"Error during image preprocessing: {e}"); return None
+        # Check if we have a cached preprocessed image
+        image_hash = hashlib.md5(str(image_path).encode()).hexdigest()
+        if image_hash in _preprocessed_cache:
+            logger.debug("Using cached preprocessed image")
+            return _preprocessed_cache[image_hash]
+
+        # Read image with validation
+        if not Path(image_path).exists():
+            logger.error(f"Image file not found: {image_path}")
+            return None
+            
+        image = cv2.imread(str(image_path))
+        if image is None:
+            logger.error(f"Failed to load image: {image_path}")
+            return None
+
+        # Resize large images to improve performance
+        max_dimension = 2000
+        height, width = image.shape[:2]
+        if max(height, width) > max_dimension:
+            scale = max_dimension / max(height, width)
+            image = cv2.resize(image, None, fx=scale, fy=scale)
+
+        # Enhanced preprocessing with error handling
+        try:
+            # Convert to grayscale
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            
+            # Apply adaptive thresholding for better text detection
+            binary = cv2.adaptiveThreshold(
+                gray,
+                255,
+                cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                cv2.THRESH_BINARY_INV,
+                11,
+                2
+            )
+            
+            # Denoise to remove small artifacts
+            denoised = cv2.fastNlMeansDenoising(binary)
+            
+            # Cache the preprocessed image
+            _preprocessed_cache[image_hash] = denoised
+            
+            # Clear cache if it gets too large
+            if len(_preprocessed_cache) > 100:
+                logger.info("Clearing preprocessing cache to prevent memory issues")
+                _preprocessed_cache.clear()
+                
+            return denoised
+            
+        except Exception as proc_error:
+            logger.error(f"Image preprocessing failed: {proc_error}")
+            # Fallback to simple thresholding
+            _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            return binary
+
+    except Exception as e:
+        logger.error(f"Image processing failed: {str(e)}")
+        return None
 
 # --- OCR Execution ---
-
-easyocr_reader = None
-def initialize_easyocr(config):
-    global easyocr_reader;
-    if easyocr_reader is None:
-        try: use_gpu = config.getboolean('OCR', 'use_gpu', fallback=False); easyocr_reader = easyocr.Reader(['en'], gpu=use_gpu); logger.info(f"EasyOCR Reader initialized (GPU: {use_gpu})")
-        except Exception as e: logger.error(f"Failed to initialize EasyOCR Reader: {e}."); easyocr_reader = "init_failed"
 
 def run_tesseract(image: np.ndarray, config) -> List[Dict]:
     results = []; min_conf_perc = config.getfloat('OCR', 'confidence_threshold', fallback=0.4) * 100
@@ -165,34 +241,154 @@ def run_easyocr(image: np.ndarray, config) -> List[Dict]:
     logger.debug(f"EasyOCR found {len(results)} results meeting confidence.")
     return results
 
-def run_ocr(config, processed_image: np.ndarray) -> List[Dict]:
-    if processed_image is None: return []
-    engine = config.get('OCR', 'ocr_engine', fallback='combined').lower()
-    all_results = []
-    img_for_tesseract = processed_image if len(processed_image.shape) == 2 else cv2.cvtColor(processed_image, cv2.COLOR_BGR2GRAY)
-    img_for_easyocr = processed_image if len(processed_image.shape) == 3 else cv2.cvtColor(processed_image, cv2.COLOR_GRAY2BGR)
-    if engine in ['tesseract', 'combined']: all_results.extend(run_tesseract(img_for_tesseract, config))
-    if engine in ['easyocr', 'combined']: all_results.extend(run_easyocr(img_for_easyocr, config))
-    # Add deduplication for 'combined' if needed
-    all_results.sort(key=lambda item: (item['Y'], item['X'])) # Sort for consistency
-    logger.info(f"OCR run complete. Found {len(all_results)} total results from engine(s): '{engine}'.")
-    return all_results
+def run_ocr(config: Any, image: np.ndarray) -> List[Dict[str, Any]]:
+    """Run OCR with enhanced reliability and error handling."""
+    try:
+        # Validate input
+        if image is None or image.size == 0:
+            logger.error("Invalid image input")
+            return []
+            
+        # Generate image hash for cache key
+        image_hash = get_image_hash(image)
+        
+        # Check cache first
+        if image_hash in _ocr_cache:
+            logger.debug("Using cached OCR results")
+            return _ocr_cache[image_hash]
+
+        # Get appropriate OCR reader based on config
+        engine = config.get('OCR', 'ocr_engine', fallback='easyocr').lower()
+        reader = get_ocr_reader(engine)
+        
+        # Run OCR with enhanced error handling
+        formatted_results = []
+        try:
+            if engine == 'tesseract':
+                # Use Tesseract with optimized settings
+                custom_config = r'--oem 3 --psm 6'
+                results = reader.image_to_data(image, config=custom_config, output_type=pytesseract.Output.DICT)
+                
+                for i in range(len(results['text'])):
+                    try:
+                        text = results['text'][i].strip()
+                        conf = float(results['conf'][i])
+                        
+                        if conf > 30 and text:  # Confidence threshold and non-empty text
+                            formatted_results.append({
+                                'text': text,
+                                'confidence': conf / 100,
+                                'X': int(results['left'][i]),
+                                'Y': int(results['top'][i]),
+                                'Width': int(results['width'][i]),
+                                'Height': int(results['height'][i])
+                            })
+                    except (ValueError, IndexError) as e:
+                        logger.warning(f"Skipping invalid Tesseract result: {e}")
+                        continue
+                        
+            else:
+                # Use EasyOCR with optimized settings
+                results = reader.readtext(image, paragraph=False)
+                
+                for (bbox, text, conf) in results:
+                    try:
+                        text = text.strip()
+                        if conf > 0.3 and text:  # Confidence threshold and non-empty text
+                            x1, y1 = bbox[0]
+                            x3, y3 = bbox[2]
+                            formatted_results.append({
+                                'text': text,
+                                'confidence': float(conf),
+                                'X': int(x1),
+                                'Y': int(y1),
+                                'Width': int(x3 - x1),
+                                'Height': int(y3 - y1)
+                            })
+                    except (ValueError, TypeError) as e:
+                        logger.warning(f"Skipping invalid EasyOCR result: {e}")
+                        continue
+                        
+        except Exception as ocr_error:
+            logger.error(f"OCR processing failed: {ocr_error}")
+            return []
+            
+        # Log detected text for debugging
+        if formatted_results:
+            logger.debug(f"Detected {len(formatted_results)} text items:")
+            for result in formatted_results:
+                logger.debug(f"Text: '{result['text']}' at ({result['X']}, {result['Y']}) with confidence {result['confidence']}")
+        else:
+            logger.warning("No text detected in image")
+
+        # Cache the results
+        _ocr_cache[image_hash] = formatted_results
+        
+        # Limit cache size to prevent memory issues
+        if len(_ocr_cache) > 1000:
+            _ocr_cache.clear()
+            logger.info("Cleared OCR cache to prevent memory issues")
+            
+        return formatted_results
+
+    except Exception as e:
+        logger.error(f"OCR failed: {str(e)}")
+        return []
 
 # --- Coordinate/Label Handling ---
 
-def save_coordinates_csv(config, ocr_results: List[Dict]):
-    """Saves the detected coordinates to the runtime CSV file."""
-    output_csv_str = config.get('General', 'runtime_ocr_csv', fallback='detected_coordinates.csv')
-    output_path = PROJECT_ROOT / output_csv_str
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+def save_coordinates_csv(config: Any, coordinates: List[Dict[str, Any]]) -> None:
+    """Save OCR coordinates to CSV with robust error handling."""
     try:
-        with open(output_path, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['Label', 'X', 'Y', 'Width', 'Height', 'Confidence', 'Engine', 'Timestamp']
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames, extrasaction='ignore')
-            writer.writeheader(); timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            for result in ocr_results: result['Timestamp'] = timestamp; writer.writerow(result)
-        logger.info(f"Runtime OCR coordinates saved to: {output_path}")
-    except Exception as e: logger.error(f"Failed to write runtime CSV {output_path}: {e}")
+        output_file = Path('detected_coordinates.csv')
+        
+        # Ensure coordinates is not empty
+        if not coordinates:
+            logger.warning("No coordinates to save")
+            return
+            
+        # Create backup of existing file if it exists
+        if output_file.exists():
+            backup_file = output_file.with_suffix('.csv.bak')
+            try:
+                output_file.rename(backup_file)
+                logger.info(f"Created backup of existing CSV: {backup_file}")
+            except Exception as e:
+                logger.warning(f"Failed to create backup: {e}")
+        
+        # Write new CSV with proper error handling
+        with open(output_file, 'w', encoding='utf-8', newline='') as f:
+            fieldnames = ['Label', 'X', 'Y', 'Width', 'Height', 'Confidence']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            
+            for coord in coordinates:
+                try:
+                    # Ensure all required fields are present with defaults
+                    row = {
+                        'Label': str(coord.get('text', '')).strip(),
+                        'X': int(coord.get('X', 0)),
+                        'Y': int(coord.get('Y', 0)),
+                        'Width': int(coord.get('Width', 0)),
+                        'Height': int(coord.get('Height', 0)),
+                        'Confidence': float(coord.get('confidence', 0))
+                    }
+                    writer.writerow(row)
+                except (ValueError, TypeError) as e:
+                    logger.warning(f"Skipping invalid coordinate entry: {e}")
+                    continue
+                    
+        logger.info(f"Successfully saved {len(coordinates)} coordinates to {output_file}")
+        
+    except Exception as e:
+        logger.error(f"Failed to save coordinates: {str(e)}")
+        # Restore backup if available
+        if 'backup_file' in locals() and backup_file.exists():
+            try:
+                backup_file.rename(output_file)
+                logger.info("Restored backup CSV file")
+            except Exception as restore_error:
+                logger.error(f"Failed to restore backup: {restore_error}")
 
 def load_coordinates_csv(config) -> List[Dict]:
     """Loads coordinates from the runtime CSV file."""
@@ -581,4 +777,75 @@ def get_coordinates_from_csv(config: configparser.ConfigParser, label_text: str)
         return None
     except Exception as e:
         logger.error(f"Error reading coordinates from CSV: {str(e)}")
+        return None
+
+def save_screenshot(page: Page, config: configparser.ConfigParser, name: str) -> Optional[Path]:
+    """
+    Save a screenshot with the given name, replacing any existing file with the same name.
+    
+    Args:
+        page: Playwright page object
+        config: Configuration object
+        name: Base name for the screenshot
+        
+    Returns:
+        Path: Path to the saved screenshot, or None if failed
+    """
+    try:
+        # Get screenshots directory from config or use default
+        screenshots_dir = Path(config.get('Paths', 'screenshots_dir', fallback='screenshots'))
+        screenshots_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Clean up old screenshots with the same base name
+        base_name = name.split('_')[0]  # Get the base name without timestamp
+        for old_file in screenshots_dir.glob(f"{base_name}_*.png"):
+            try:
+                old_file.unlink()
+                logger.info(f"Removed old screenshot: {old_file}")
+            except Exception as e:
+                logger.warning(f"Failed to remove old screenshot {old_file}: {e}")
+        
+        # Generate new filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{name}_{timestamp}.png"
+        filepath = screenshots_dir / filename
+        
+        # Take full page screenshot
+        page.screenshot(path=str(filepath), full_page=True)
+        logger.info(f"New screenshot saved: {filepath}")
+        
+        return filepath
+    except Exception as e:
+        logger.error(f"Failed to save screenshot: {e}")
+        return None
+
+def get_latest_screenshot(config: configparser.ConfigParser, base_name: str) -> Optional[str]:
+    """
+    Get the path to the latest screenshot with the given base name.
+    
+    Args:
+        config: Configuration object
+        base_name: Base name of the screenshot
+        
+    Returns:
+        str: Path to the latest screenshot, or None if not found
+    """
+    try:
+        screenshots_dir = config.get('Paths', 'screenshots_dir', fallback='screenshots')
+        if not os.path.exists(screenshots_dir):
+            return None
+            
+        matching_files = [
+            f for f in os.listdir(screenshots_dir)
+            if f.startswith(f"{base_name}_") and f.endswith('.png')
+        ]
+        
+        if not matching_files:
+            return None
+            
+        # Sort by timestamp (newest first)
+        latest_file = sorted(matching_files, reverse=True)[0]
+        return os.path.join(screenshots_dir, latest_file)
+    except Exception as e:
+        logger.error(f"Failed to get latest screenshot: {e}")
         return None

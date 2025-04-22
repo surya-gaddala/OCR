@@ -131,3 +131,11 @@ The `config.ini` file controls various aspects of the automation:
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+[OCR]
+engine = tesseract
+tesseract_path = C:\Program Files\Tesseract-OCR\tesseract.exe
+tesseract_config = --psm 6 --oem 3 --dpi 300
+
+[General]
+runtime_ocr_csv = detected_coordinates.csv

@@ -42,3 +42,1198 @@
 2025-04-16 21:26:29.957 - behave - INFO - Saved screenshot
 2025-04-16 21:26:29.958 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
 2025-04-16 21:26:30.265 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:16:48.111 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:16:48.115 - behave - INFO - Starting Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:16:50.499 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:17:27.194 - behave - INFO - Step Passed: Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+2025-04-18 18:17:27.440 - behave - INFO - Saved screenshot
+2025-04-18 18:17:56.194 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:17:59.065 - behave - INFO - Step Passed: When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
+2025-04-18 18:17:59.353 - behave - INFO - Saved screenshot
+2025-04-18 18:18:01.377 - behave - INFO - Step Passed: And I enter "Test@123" using label "Password"
+2025-04-18 18:18:01.593 - behave - INFO - Saved screenshot
+2025-04-18 18:18:03.028 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:18:32.513 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-18 18:18:32.776 - behave - INFO - Saved screenshot
+2025-04-18 18:19:02.057 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:19:02.845 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:19:31.465 - behave - INFO - Step Passed: And I click using label "Tablets" and perform OCR
+2025-04-18 18:19:31.700 - behave - INFO - Saved screenshot
+2025-04-18 18:19:58.394 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:20:26.352 - behave - INFO - Step Passed: And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
+2025-04-18 18:20:26.573 - behave - INFO - Saved screenshot
+2025-04-18 18:20:26.574 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:20:26.903 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:23:50.004 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:23:50.008 - behave - INFO - Starting Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:23:52.349 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:24:27.003 - behave - INFO - Step Passed: Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+2025-04-18 18:24:27.239 - behave - INFO - Saved screenshot
+2025-04-18 18:24:54.454 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:24:57.446 - behave - INFO - Step Passed: When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
+2025-04-18 18:24:57.697 - behave - INFO - Saved screenshot
+2025-04-18 18:24:59.743 - behave - INFO - Step Passed: And I enter "Test@123" using label "Password"
+2025-04-18 18:24:59.974 - behave - INFO - Saved screenshot
+2025-04-18 18:25:04.362 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:25:33.046 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-18 18:25:33.260 - behave - INFO - Saved screenshot
+2025-04-18 18:26:01.829 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:26:02.646 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:26:30.975 - behave - INFO - Step Passed: And I click using label "Tablets" and perform OCR
+2025-04-18 18:26:31.225 - behave - INFO - Saved screenshot
+2025-04-18 18:26:58.410 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:27:26.239 - behave - INFO - Step Passed: And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
+2025-04-18 18:27:26.498 - behave - INFO - Saved screenshot
+2025-04-18 18:27:26.499 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:27:26.811 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:30:15.699 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:30:15.703 - behave - INFO - Starting Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:30:17.918 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:30:52.143 - behave - INFO - Step Passed: Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+2025-04-18 18:30:52.406 - behave - INFO - Saved screenshot
+2025-04-18 18:31:19.937 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:31:22.830 - behave - INFO - Step Passed: When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
+2025-04-18 18:31:23.101 - behave - INFO - Saved screenshot
+2025-04-18 18:31:25.158 - behave - INFO - Step Passed: And I enter "Test@123" using label "Password"
+2025-04-18 18:31:25.387 - behave - INFO - Saved screenshot
+2025-04-18 18:31:26.816 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:31:56.428 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-18 18:31:56.658 - behave - INFO - Saved screenshot
+2025-04-18 18:32:24.801 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:32:25.656 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:32:54.683 - behave - INFO - Step Passed: And I click using label "Tablets" and perform OCR
+2025-04-18 18:32:54.940 - behave - INFO - Saved screenshot
+2025-04-18 18:33:21.515 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:33:48.895 - behave - INFO - Step Passed: And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
+2025-04-18 18:33:49.104 - behave - INFO - Saved screenshot
+2025-04-18 18:33:49.104 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:33:49.453 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:37:59.527 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:37:59.531 - behave - INFO - Starting Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:38:01.705 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:38:28.826 - behave - ERROR - Step Failed: Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+2025-04-18 18:38:28.935 - behave - INFO - Saved screenshot
+2025-04-18 18:38:28.937 - behave - INFO - Finished Scenario: Successful login using coordinates detected by OCR
+2025-04-18 18:38:29.167 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:39:26.468 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:39:26.472 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 18:39:29.670 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:40:26.235 - behave - INFO - Step Passed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 18:40:26.700 - behave - INFO - Saved screenshot
+2025-04-18 18:40:26.703 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-18 18:41:20.981 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:41:20.982 - behave - INFO - Page load wait completed
+2025-04-18 18:41:20.982 - behave - INFO - Step Passed: And I wait for 5 seconds for the page to load
+2025-04-18 18:41:21.429 - behave - INFO - Saved screenshot
+2025-04-18 18:41:23.284 - behave - INFO - Step Passed: When I enter "surya" using label "Enter Name"
+2025-04-18 18:41:23.727 - behave - INFO - Saved screenshot
+2025-04-18 18:41:26.251 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Enter EMail"
+2025-04-18 18:41:26.692 - behave - INFO - Saved screenshot
+2025-04-18 18:41:28.813 - behave - INFO - Step Passed: And I enter "1234567890" using label "Enter Phone"
+2025-04-18 18:41:29.221 - behave - INFO - Saved screenshot
+2025-04-18 18:41:29.888 - behave - INFO - Step Passed: And I select the radio button using label "Male"
+2025-04-18 18:41:30.315 - behave - INFO - Saved screenshot
+2025-04-18 18:41:30.316 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 18:41:30.685 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:42:39.143 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:42:39.147 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 18:42:43.269 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:43:41.706 - behave - INFO - Step Passed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 18:43:42.192 - behave - INFO - Saved screenshot
+2025-04-18 18:43:42.197 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-18 18:44:34.853 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:44:34.854 - behave - INFO - Page load wait completed
+2025-04-18 18:44:34.855 - behave - INFO - Step Passed: And I wait for 5 seconds for the page to load
+2025-04-18 18:44:35.264 - behave - INFO - Saved screenshot
+2025-04-18 18:44:37.167 - behave - INFO - Step Passed: When I enter "surya" using label "Enter Name"
+2025-04-18 18:44:37.643 - behave - INFO - Saved screenshot
+2025-04-18 18:44:40.181 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Enter EMail"
+2025-04-18 18:44:40.599 - behave - INFO - Saved screenshot
+2025-04-18 18:44:42.739 - behave - INFO - Step Passed: And I enter "1234567890" using label "Enter Phone"
+2025-04-18 18:44:43.221 - behave - INFO - Saved screenshot
+2025-04-18 18:44:43.898 - behave - INFO - Step Passed: And I select the radio button using label "Male"
+2025-04-18 18:44:44.273 - behave - INFO - Saved screenshot
+2025-04-18 18:44:44.274 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 18:44:44.675 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:47:27.964 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:47:27.968 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 18:47:30.408 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:48:31.795 - behave - INFO - Step Passed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 18:48:32.278 - behave - INFO - Saved screenshot
+2025-04-18 18:48:32.281 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-18 18:49:26.123 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:49:26.125 - behave - INFO - Page load wait completed
+2025-04-18 18:49:26.125 - behave - INFO - Step Passed: And I wait for 5 seconds for the page to load
+2025-04-18 18:49:26.566 - behave - INFO - Saved screenshot
+2025-04-18 18:49:28.463 - behave - INFO - Step Passed: When I enter "surya" using label "Enter Name"
+2025-04-18 18:49:29.069 - behave - INFO - Saved screenshot
+2025-04-18 18:49:31.616 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Enter EMail"
+2025-04-18 18:49:32.078 - behave - INFO - Saved screenshot
+2025-04-18 18:49:34.244 - behave - INFO - Step Passed: And I enter "1234567890" using label "Enter Phone"
+2025-04-18 18:49:34.742 - behave - INFO - Saved screenshot
+2025-04-18 18:49:38.125 - behave - INFO - Step Passed: And I select the radio button using label "Male"
+2025-04-18 18:49:38.534 - behave - INFO - Saved screenshot
+2025-04-18 18:49:38.535 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 18:49:38.930 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:53:53.905 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:53:53.908 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 18:53:57.157 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:53:59.673 - behave - ERROR - Step Failed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 18:53:59.675 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:53:59.676 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 18:53:59.711 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-18 18:54:00.010 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:54:44.482 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:54:44.487 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 18:54:47.587 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:54:50.777 - behave - ERROR - Step Failed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 18:54:50.779 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:54:50.780 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 18:54:50.826 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-18 18:54:51.114 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 18:56:28.213 - behave - INFO - Configuration loaded successfully.
+2025-04-18 18:56:28.217 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 18:56:30.561 - behave - INFO - Detected page navigation/reload
+2025-04-18 18:57:31.713 - behave - INFO - Step Passed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 18:57:31.715 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:57:31.717 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-18 18:58:24.476 - behave - INFO - OCR completed and CSV updated
+2025-04-18 18:58:24.477 - behave - INFO - Page load wait completed
+2025-04-18 18:58:24.478 - behave - INFO - Step Passed: And I wait for 5 seconds for the page to load
+2025-04-18 18:58:24.480 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:58:30.525 - behave - INFO - Step Passed: When I enter "surya" using label "Enter Name"
+2025-04-18 18:58:30.528 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:58:37.248 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Enter EMail"
+2025-04-18 18:58:37.251 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:58:43.509 - behave - INFO - Step Passed: And I enter "1234567890" using label "Enter Phone"
+2025-04-18 18:58:43.512 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:58:50.472 - behave - INFO - Step Passed: And I select the radio button using label "Male"
+2025-04-18 18:58:50.474 - behave - WARNING - Failed to save screenshot
+2025-04-18 18:58:50.474 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 18:58:50.803 - behave - INFO - Browser resources cleaned up successfully
+2025-04-18 19:03:41.868 - behave - INFO - Configuration loaded successfully.
+2025-04-18 19:03:41.874 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-18 19:03:45.021 - behave - INFO - Detected page navigation/reload
+2025-04-18 19:04:45.095 - behave - INFO - Step Passed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-18 19:04:45.097 - behave - WARNING - Failed to save screenshot
+2025-04-18 19:04:45.099 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-18 19:05:36.206 - behave - INFO - OCR completed and CSV updated
+2025-04-18 19:05:36.207 - behave - INFO - Page load wait completed
+2025-04-18 19:05:36.208 - behave - INFO - Step Passed: And I wait for 5 seconds for the page to load
+2025-04-18 19:05:36.211 - behave - WARNING - Failed to save screenshot
+2025-04-18 19:05:42.692 - behave - INFO - Step Passed: When I enter "surya" using label "Enter Name"
+2025-04-18 19:05:42.695 - behave - WARNING - Failed to save screenshot
+2025-04-18 19:05:49.334 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Enter EMail"
+2025-04-18 19:05:49.338 - behave - WARNING - Failed to save screenshot
+2025-04-18 19:05:55.600 - behave - INFO - Step Passed: And I enter "1234567890" using label "Enter Phone"
+2025-04-18 19:05:55.603 - behave - WARNING - Failed to save screenshot
+2025-04-18 19:05:56.423 - behave - ERROR - Step Failed: And I select the radio button using label "Male"
+2025-04-18 19:05:56.425 - behave - WARNING - Failed to save screenshot
+2025-04-18 19:05:56.427 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-18 19:05:56.802 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 10:56:06.717 - behave - INFO - Configuration loaded successfully.
+2025-04-21 10:56:06.720 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 10:56:10.025 - behave - INFO - Detected page navigation/reload
+2025-04-21 10:56:42.217 - behave - INFO - Step Passed: Given I navigate to "http://testautomationpractice.blogspot.com/2018/09/automation-form.html" and perform OCR
+2025-04-21 10:56:42.218 - behave - WARNING - Failed to save screenshot
+2025-04-21 10:56:42.219 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 10:57:11.841 - behave - INFO - OCR completed and CSV updated
+2025-04-21 10:57:11.843 - behave - INFO - Page load wait completed
+2025-04-21 10:57:11.843 - behave - INFO - Step Passed: And I wait for 5 seconds for the page to load
+2025-04-21 10:57:11.845 - behave - WARNING - Failed to save screenshot
+2025-04-21 10:57:17.672 - behave - INFO - Step Passed: When I enter "surya" using label "Enter Name"
+2025-04-21 10:57:17.673 - behave - WARNING - Failed to save screenshot
+2025-04-21 10:57:24.147 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Enter EMail"
+2025-04-21 10:57:24.149 - behave - WARNING - Failed to save screenshot
+2025-04-21 10:57:30.048 - behave - INFO - Step Passed: And I enter "1234567890" using label "Enter Phone"
+2025-04-21 10:57:30.052 - behave - WARNING - Failed to save screenshot
+2025-04-21 10:57:30.808 - behave - ERROR - Step Failed: And I select the radio button using label "Male"
+2025-04-21 10:57:30.809 - behave - WARNING - Failed to save screenshot
+2025-04-21 10:57:30.811 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 10:57:31.156 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 11:20:49.888 - behave - INFO - Configuration loaded successfully.
+2025-04-21 11:20:49.908 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 11:20:57.646 - behave - INFO - Detected page navigation/reload
+2025-04-21 11:21:17.461 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 11:21:17.462 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:21:17.463 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 11:21:17.539 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 11:21:17.791 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 11:41:50.331 - behave - INFO - Configuration loaded successfully.
+2025-04-21 11:41:50.333 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 11:41:52.954 - behave - INFO - Detected page navigation/reload
+2025-04-21 11:42:12.119 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 11:42:12.121 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:42:26.215 - behave - INFO - OCR completed and CSV updated
+2025-04-21 11:42:26.223 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-21 11:42:26.224 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:42:26.225 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 11:42:26.533 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 11:51:50.146 - behave - INFO - Configuration loaded successfully.
+2025-04-21 11:51:50.149 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 11:51:52.739 - behave - INFO - Detected page navigation/reload
+2025-04-21 11:52:12.307 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 11:52:12.308 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:52:25.778 - behave - INFO - OCR completed and CSV updated
+2025-04-21 11:52:39.980 - behave - INFO - Step Passed: When I click using label "Select Order" and perform OCR
+2025-04-21 11:52:39.980 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:52:54.298 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 11:52:54.298 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:52:54.298 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 11:52:54.615 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 11:53:58.846 - behave - INFO - Configuration loaded successfully.
+2025-04-21 11:53:58.849 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 11:54:01.758 - behave - INFO - Detected page navigation/reload
+2025-04-21 11:54:20.519 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 11:54:20.522 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:54:33.895 - behave - INFO - OCR completed and CSV updated
+2025-04-21 11:54:47.890 - behave - INFO - Step Passed: When I click using label "Select Order" and perform OCR
+2025-04-21 11:54:47.891 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:55:01.865 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 11:55:01.866 - behave - WARNING - Failed to save screenshot
+2025-04-21 11:55:01.867 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 11:55:02.190 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:11:24.115 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:11:24.119 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:11:26.840 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:11:46.130 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:11:46.132 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:11:59.619 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:12:13.854 - behave - INFO - Step Passed: When I click using label "Select Order" and perform OCR
+2025-04-21 13:12:13.855 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:12:27.889 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:12:27.890 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:12:28.377 - behave - ERROR - Step Failed: When I enter "surya" using label "Enter Name"
+2025-04-21 13:12:28.378 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:12:28.380 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:12:28.736 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:15:43.930 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:15:43.937 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:15:46.452 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:16:05.974 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:16:05.976 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:16:20.883 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:16:35.009 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 13:16:35.010 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:16:49.916 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:16:49.917 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:16:50.446 - behave - ERROR - Step Failed: When I enter "surya" using label "Enter Name"
+2025-04-21 13:16:50.447 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:16:50.449 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:16:50.813 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:22:00.169 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:22:00.172 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:22:02.832 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:22:21.658 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:22:21.660 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:22:35.093 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:22:48.622 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 13:22:48.623 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:23:03.442 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:23:03.443 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:23:09.962 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Email Address"
+2025-04-21 13:23:09.963 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:23:15.927 - behave - INFO - Step Passed: And I enter "surya@gmail.com" using label "Password"
+2025-04-21 13:23:15.928 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:23:29.930 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:23:29.931 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:23:29.931 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:23:30.248 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:25:00.040 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:25:00.043 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:25:02.794 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:25:21.844 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:25:21.845 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:25:35.693 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:25:49.488 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 13:25:49.489 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:26:03.532 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:26:03.533 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:26:10.098 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 13:26:10.099 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:26:15.884 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 13:26:15.885 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:26:17.162 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:26:31.928 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:26:31.929 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:26:31.930 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:26:32.049 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-21 13:26:32.467 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:26:41.544 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:26:41.546 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:26:44.087 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:27:03.181 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:27:03.183 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:27:16.866 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:27:30.494 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 13:27:30.495 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:27:44.760 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:27:44.760 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:27:51.298 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 13:27:51.299 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:27:57.208 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 13:27:57.211 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:27:58.737 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:28:13.790 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:28:13.791 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:28:13.792 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:28:13.882 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-21 13:28:14.139 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:35:30.116 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:35:30.119 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:35:32.702 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:35:51.888 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:35:51.889 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:35:51.891 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:35:51.983 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 13:35:52.222 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:39:17.155 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:39:17.159 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:39:19.742 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:39:38.999 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:39:39.001 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:39:39.282 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 13:39:39.283 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:39:53.099 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:40:06.908 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 13:40:06.909 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:40:21.538 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:40:21.539 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:40:28.053 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 13:40:28.054 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:40:33.820 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 13:40:33.821 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:40:35.078 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:40:50.673 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:40:50.674 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:40:50.674 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:40:50.764 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-21 13:40:51.020 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:43:49.948 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:43:49.950 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:43:52.591 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:44:11.732 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:44:11.734 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:44:12.026 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 13:44:12.028 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:44:25.615 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:44:25.826 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-21 13:44:25.827 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:44:25.829 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:44:26.149 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:48:48.036 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:48:48.038 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:48:50.609 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:49:09.383 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:49:09.384 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:49:09.657 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 13:49:09.659 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:49:23.211 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:49:23.218 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-21 13:49:23.219 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:49:23.220 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:49:23.544 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:50:45.654 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:50:45.656 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:50:46.884 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 13:50:51.954 - behave - INFO - Page load wait completed
+2025-04-21 13:50:51.955 - behave - INFO - Step Passed: Given I wait for 5 seconds for the page to load
+2025-04-21 13:50:51.957 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:50:53.271 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:51:11.760 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:51:11.761 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:51:12.003 - behave - INFO - Step Passed: And I see the label "Select Order Type"
+2025-04-21 13:51:12.005 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:51:25.436 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:51:39.515 - behave - INFO - Step Passed: When I click using label "Pickup" and perform OCR
+2025-04-21 13:51:39.517 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:51:53.976 - behave - INFO - Step Passed: And I click using label "ASAP" and perform OCR
+2025-04-21 13:51:53.977 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:52:08.127 - behave - INFO - Step Passed: And I click using label "PICKUP" and perform OCR
+2025-04-21 13:52:08.128 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:52:22.552 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 13:52:22.553 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:52:23.011 - behave - ERROR - Step Failed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 13:52:23.012 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:52:23.014 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:52:23.353 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 13:57:10.954 - behave - INFO - Configuration loaded successfully.
+2025-04-21 13:57:10.956 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 13:57:12.238 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 13:57:17.316 - behave - INFO - Page load wait completed
+2025-04-21 13:57:17.317 - behave - INFO - Step Passed: Given I wait for 5 seconds for the page to load
+2025-04-21 13:57:17.319 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:57:18.549 - behave - INFO - Detected page navigation/reload
+2025-04-21 13:57:37.581 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 13:57:37.582 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:57:37.838 - behave - INFO - Step Passed: And I see the label "Welcome to Fratos Kitchen"
+2025-04-21 13:57:37.840 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:57:51.179 - behave - INFO - OCR completed and CSV updated
+2025-04-21 13:58:05.087 - behave - INFO - Step Passed: When I click using label "Pickup" and perform OCR
+2025-04-21 13:58:05.088 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:58:05.330 - behave - ERROR - Step Failed: And I click using label "ASAP" and perform OCR
+2025-04-21 13:58:05.331 - behave - WARNING - Failed to save screenshot
+2025-04-21 13:58:05.332 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 13:58:05.673 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 14:01:44.950 - behave - INFO - Configuration loaded successfully.
+2025-04-21 14:01:44.952 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 14:01:46.220 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 14:01:51.288 - behave - INFO - Page load wait completed
+2025-04-21 14:01:51.289 - behave - INFO - Step Passed: Given I wait for 5 seconds for the page to load
+2025-04-21 14:01:51.291 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:01:52.535 - behave - INFO - Detected page navigation/reload
+2025-04-21 14:02:11.226 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 14:02:11.227 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:02:11.467 - behave - INFO - Step Passed: And I see the label "Welcome to Fratos Kitchen"
+2025-04-21 14:02:11.469 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:02:24.795 - behave - INFO - OCR completed and CSV updated
+2025-04-21 14:02:41.225 - behave - INFO - Step Passed: When I select "Pickup" from dropdown labeled "Select Order Type"
+2025-04-21 14:02:41.227 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:02:58.340 - behave - INFO - Step Passed: And I select "ASAP" from dropdown labeled "Select When To Receive Order"
+2025-04-21 14:02:58.342 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:02:58.564 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 14:02:58.565 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:02:58.567 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 14:02:58.938 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 14:32:52.720 - behave - INFO - Configuration loaded successfully.
+2025-04-21 14:32:52.722 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 14:32:54.168 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 14:32:59.291 - behave - INFO - Page load wait completed
+2025-04-21 14:32:59.292 - behave - INFO - Step Passed: Given I wait for 5 seconds for the page to load
+2025-04-21 14:32:59.295 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:33:00.549 - behave - INFO - Detected page navigation/reload
+2025-04-21 14:33:19.716 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 14:33:19.718 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:33:19.953 - behave - INFO - Step Passed: And I see the label "Welcome to Fratos Kitchen"
+2025-04-21 14:33:19.955 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:33:33.168 - behave - INFO - OCR completed and CSV updated
+2025-04-21 14:33:33.174 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-21 14:33:33.174 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:33:33.176 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 14:33:33.527 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 14:36:54.969 - behave - INFO - Configuration loaded successfully.
+2025-04-21 14:36:54.971 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 14:36:56.297 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 14:37:01.371 - behave - INFO - Page load wait completed
+2025-04-21 14:37:01.372 - behave - INFO - Step Passed: Given I wait for 5 seconds for the page to load
+2025-04-21 14:37:01.374 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:37:02.658 - behave - INFO - Detected page navigation/reload
+2025-04-21 14:37:21.677 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 14:37:21.678 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:37:21.947 - behave - INFO - Step Passed: And I see the label "Welcome to Fratos Kitchen"
+2025-04-21 14:37:21.949 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:37:35.438 - behave - INFO - OCR completed and CSV updated
+2025-04-21 14:37:48.764 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 14:37:48.765 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:38:02.234 - behave - INFO - Step Passed: And I click using label "PICKUP" and perform OCR
+2025-04-21 14:38:02.235 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:38:16.635 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 14:38:16.636 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:38:17.261 - behave - ERROR - Step Failed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 14:38:17.262 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:38:17.264 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 14:38:17.644 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 14:40:48.151 - behave - INFO - Configuration loaded successfully.
+2025-04-21 14:40:48.152 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 14:40:49.492 - behave - INFO - Waiting for page to load and stabilize...
+2025-04-21 14:40:54.603 - behave - INFO - Page load wait completed
+2025-04-21 14:40:54.604 - behave - INFO - Step Passed: Given I wait for 5 seconds for the page to load
+2025-04-21 14:40:54.605 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:40:55.899 - behave - INFO - Detected page navigation/reload
+2025-04-21 14:41:14.545 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 14:41:14.546 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:41:14.783 - behave - INFO - Step Passed: And I see the label "Welcome to Fratos Kitchen"
+2025-04-21 14:41:14.784 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:41:28.098 - behave - INFO - OCR completed and CSV updated
+2025-04-21 14:41:41.919 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 14:41:41.920 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:41:56.368 - behave - INFO - Step Passed: And I click using label "PICKUP" and perform OCR
+2025-04-21 14:41:56.368 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:42:10.593 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 14:42:10.595 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:42:11.046 - behave - ERROR - Step Failed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 14:42:11.047 - behave - WARNING - Failed to save screenshot
+2025-04-21 14:42:11.048 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 14:42:11.411 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:04:00.800 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:04:00.802 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:04:03.399 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:04:22.280 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 15:04:22.281 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:04:22.560 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 15:04:22.561 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:04:35.848 - behave - INFO - OCR completed and CSV updated
+2025-04-21 15:04:49.536 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 15:04:49.537 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:05:03.253 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:05:03.254 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:05:09.847 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 15:05:09.848 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:05:15.585 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 15:05:15.586 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:05:17.090 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:05:31.327 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:05:31.327 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:05:31.328 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 15:05:31.418 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-21 15:05:31.682 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:08:56.867 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:08:56.869 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:08:58.244 - behave - ERROR - Step Failed: Given I maximize the browser window
+2025-04-21 15:08:58.245 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:08:58.248 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 15:08:58.563 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:16:33.182 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:16:33.184 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:16:35.999 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:16:55.051 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 15:16:55.053 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:16:55.325 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 15:16:55.327 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:17:08.639 - behave - INFO - OCR completed and CSV updated
+2025-04-21 15:17:22.332 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 15:17:22.333 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:17:36.386 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:17:36.387 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:17:42.947 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 15:17:42.949 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:17:48.814 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 15:17:48.815 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:17:50.266 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:18:05.233 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:18:05.234 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:18:05.234 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 15:18:05.329 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-21 15:18:05.601 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:22:00.273 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:23:15.513 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:23:15.517 - behave - INFO - Starting Scenario: 
+2025-04-21 15:23:17.683 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:23:26.987 - behave - INFO - Step Passed: Given I navigate to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" and perform OCR
+2025-04-21 15:23:26.988 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:23:27.160 - behave - ERROR - Step Failed: When I enter "Admin" using label "Username"
+2025-04-21 15:23:27.161 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:23:27.162 - behave - INFO - Finished Scenario: 
+2025-04-21 15:23:27.198 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 15:23:27.476 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:25:23.813 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:25:23.814 - behave - INFO - Starting Scenario: 
+2025-04-21 15:25:26.032 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:25:35.143 - behave - INFO - Step Passed: Given I navigate to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" and perform OCR
+2025-04-21 15:25:35.144 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:25:35.293 - behave - ERROR - Step Failed: When I enter "Admin" using label "Username"
+2025-04-21 15:25:35.294 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:25:35.295 - behave - INFO - Finished Scenario: 
+2025-04-21 15:25:35.338 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 15:25:35.607 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:26:46.782 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:26:46.784 - behave - INFO - Starting Scenario: 
+2025-04-21 15:26:48.977 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:26:58.153 - behave - INFO - Step Passed: Given I navigate to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" and perform OCR
+2025-04-21 15:26:58.155 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:26:58.155 - behave - INFO - Finished Scenario: 
+2025-04-21 15:26:58.205 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 15:26:58.479 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:30:18.546 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:30:18.548 - behave - INFO - Starting Scenario: 
+2025-04-21 15:30:21.013 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:30:31.215 - behave - INFO - Step Passed: Given I navigate to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" and perform OCR
+2025-04-21 15:30:31.217 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:30:31.217 - behave - INFO - Finished Scenario: 
+2025-04-21 15:30:31.305 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 15:30:31.567 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:31:41.838 - behave - INFO - Configuration loaded successfully.
+2025-04-21 15:31:41.840 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:31:44.596 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:32:04.273 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 15:32:04.274 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:32:04.544 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 15:32:04.546 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:32:17.882 - behave - INFO - OCR completed and CSV updated
+2025-04-21 15:32:45.899 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 15:32:45.901 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:33:17.662 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:33:17.666 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:33:24.531 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 15:33:24.535 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:33:30.764 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 15:33:30.768 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:33:32.392 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:34:03.145 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:34:03.147 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:34:03.148 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 15:34:03.227 - behave - WARNING - Failed to re-run OCR after navigation
+2025-04-21 15:34:03.581 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:38:54.179 - behave - ERROR - CRITICAL: Failed to initialize environment
+Traceback (most recent call last):
+  File "features\environment.py", line 260, in before_all
+    context.browser.windows()[0].maximize()
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Browser' object has no attribute 'windows'
+2025-04-21 15:38:54.458 - behave - INFO - Browser resources cleaned up successfully.
+2025-04-21 15:41:56.412 - behave - INFO - Browser initialized with screen size: 1280x720
+2025-04-21 15:41:56.414 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:41:56.415 - behave - WARNING - Attempt 1 failed: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.. Retrying in 2 seconds...
+2025-04-21 15:41:58.417 - behave - WARNING - Attempt 2 failed: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.. Retrying in 2 seconds...
+2025-04-21 15:42:00.425 - behave - ERROR - Scenario setup failed
+Traceback (most recent call last):
+  File "features\environment.py", line 316, in before_scenario
+    context.playwright, context.browser, context.browser_context, context.page = retry_operation(
+                                                                                 ~~~~~~~~~~~~~~~^
+        init_browser_with_retry,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        max_timeout
+        ^^^^^^^^^^^
+    )
+    ^
+  File "features\environment.py", line 240, in retry_operation
+    raise AutomationError(
+    ...<2 lines>...
+    )
+AutomationError: Operation failed after 3 attempts. Last error: It looks like you are using Playwright Sync API inside the asyncio loop.
+Please use the Async API instead.
+2025-04-21 15:42:00.430 - behave - INFO - Finished Scenario: Successful form filling and submission
+2025-04-21 15:42:00.661 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:42:00.666 - behave - ERROR - WARNING: Failed to clean up browser resources
+Traceback (most recent call last):
+  File "features\environment.py", line 291, in after_all
+    context.browser.close()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\OCR\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 14263, in close
+    return mapping.from_maybe_impl(self._sync(self._impl_obj.close(reason=reason)))
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OCR\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 104, in _sync
+    raise Error("Event loop is closed! Is Playwright already stopped?")
+playwright._impl._errors.Error: Event loop is closed! Is Playwright already stopped?
+2025-04-21 15:44:20.252 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 15:44:20.259 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:44:21.921 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 15:44:23.318 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:45:19.465 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 15:45:19.467 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:46:04.053 - behave - INFO - OCR completed and CSV updated
+2025-04-21 15:46:04.098 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 15:46:04.100 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:46:50.165 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 15:46:50.167 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:47:34.365 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:47:34.367 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:47:35.303 - behave - ERROR - Step Failed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 15:47:35.304 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:47:36.130 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:50:01.496 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 15:50:01.501 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:50:02.929 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 15:50:04.432 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:50:58.278 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 15:50:58.280 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:51:42.617 - behave - INFO - OCR completed and CSV updated
+2025-04-21 15:51:42.636 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 15:51:42.638 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:52:27.701 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-21 15:52:27.703 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:53:12.173 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 15:53:12.176 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:53:12.962 - behave - ERROR - Step Failed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 15:53:12.963 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:53:13.478 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 15:55:18.204 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 15:55:18.210 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 15:55:19.563 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 15:55:21.020 - behave - INFO - Detected page navigation/reload
+2025-04-21 15:56:11.530 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 15:56:11.532 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:57:33.552 - behave - INFO - OCR completed and CSV updated
+2025-04-21 15:57:33.581 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 15:57:33.583 - behave - WARNING - Failed to save screenshot
+2025-04-21 15:57:33.995 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 16:00:33.268 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 16:00:33.275 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 16:00:34.565 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 16:00:36.008 - behave - INFO - Detected page navigation/reload
+2025-04-21 16:01:26.322 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 16:01:26.325 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:02:48.790 - behave - INFO - OCR completed and CSV updated
+2025-04-21 16:02:48.811 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 16:02:48.815 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:02:49.409 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 16:25:27.422 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 16:25:27.430 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 16:25:28.765 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 16:25:30.183 - behave - INFO - Detected page navigation/reload
+2025-04-21 16:26:27.965 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 16:26:27.968 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:28:06.670 - behave - INFO - OCR completed and CSV updated
+2025-04-21 16:28:06.702 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 16:28:06.705 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:28:07.143 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 16:29:16.109 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 16:29:16.116 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 16:29:17.453 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 16:29:18.773 - behave - INFO - Detected page navigation/reload
+2025-04-21 16:30:16.140 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 16:30:16.143 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:31:53.155 - behave - INFO - OCR completed and CSV updated
+2025-04-21 16:31:53.196 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 16:31:53.198 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:31:53.617 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 16:51:17.209 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 16:51:17.216 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 16:51:18.453 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 16:51:20.036 - behave - INFO - Detected page navigation/reload
+2025-04-21 16:52:10.899 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 16:52:10.901 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:53:32.965 - behave - INFO - OCR completed and CSV updated
+2025-04-21 16:53:33.005 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 16:53:33.007 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:53:33.492 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 16:57:20.341 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 16:57:20.347 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 16:57:21.650 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 16:57:23.096 - behave - INFO - Detected page navigation/reload
+2025-04-21 16:58:13.895 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 16:58:13.898 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:58:55.293 - behave - INFO - OCR completed and CSV updated
+2025-04-21 16:58:55.329 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 16:58:55.332 - behave - WARNING - Failed to save screenshot
+2025-04-21 16:58:55.796 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:01:31.781 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:01:31.787 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:01:33.101 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:01:34.374 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:02:26.957 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:02:26.960 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:03:10.230 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:03:10.253 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 17:03:10.255 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:03:10.903 - behave - ERROR - Step Failed: When I click using label "x" and perform OCR
+2025-04-21 17:03:10.904 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:03:11.632 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:04:21.846 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:04:21.853 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:04:23.195 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:04:24.570 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:05:17.475 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:05:17.478 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:06:00.837 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:06:00.856 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 17:06:00.857 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:06:46.508 - behave - INFO - Step Passed: When I click using label "Start Order" and perform OCR
+2025-04-21 17:06:46.510 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:07:29.374 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 17:07:29.377 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:07:36.585 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 17:07:36.589 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:07:43.134 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 17:07:43.137 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:07:44.735 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:08:04.185 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 17:08:04.187 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:08:04.350 - behave - WARNING - Navigation handler error: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-04-21 17:08:04.697 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:14:23.006 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:14:23.014 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:14:24.283 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:14:25.662 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:15:19.709 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:15:19.713 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:16:03.355 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:16:03.388 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 17:16:03.391 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:16:03.998 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:23:50.507 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:23:50.515 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:23:51.784 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:23:53.059 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:23:56.755 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:23:56.758 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:23:57.188 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 17:23:57.191 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:23:57.246 - behave - WARNING - Navigation handler error: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-04-21 17:23:57.679 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:25:22.811 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:25:22.815 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:25:24.172 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:25:25.642 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:25:29.278 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:25:29.280 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:25:29.680 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 17:25:29.681 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:25:29.736 - behave - WARNING - Navigation handler error: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-04-21 17:25:30.230 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:28:34.538 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:28:34.545 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:28:35.868 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:28:37.335 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:28:42.354 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 17:28:45.456 - behave - ERROR - Step Failed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:28:45.458 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:28:45.961 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:35:31.974 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:35:31.982 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:35:33.485 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:35:34.799 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:36:34.192 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:36:34.195 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:37:18.355 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:37:19.230 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 17:37:19.232 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:38:05.326 - behave - INFO - Step Passed: When I click using label "Start Order" and perform OCR
+2025-04-21 17:38:05.329 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:38:49.772 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 17:38:49.774 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:38:57.159 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-21 17:38:57.162 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:39:03.531 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-21 17:39:03.533 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:39:05.192 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:39:25.118 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-21 17:39:25.120 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:39:25.284 - behave - WARNING - Navigation handler error: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-04-21 17:39:25.667 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:39:51.039 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:39:51.047 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:39:52.325 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:39:53.612 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:40:45.820 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:40:45.823 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:41:29.231 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:41:29.253 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 17:41:29.255 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:41:29.258 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-21 17:41:29.260 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:41:29.718 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:42:41.491 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:42:41.498 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:42:42.818 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:42:44.191 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:43:36.708 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:43:36.711 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:44:19.742 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:44:19.759 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 17:44:19.761 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:44:19.764 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-21 17:44:19.766 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:44:20.199 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 17:45:19.584 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 17:45:19.591 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 17:45:20.999 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 17:45:22.419 - behave - INFO - Detected page navigation/reload
+2025-04-21 17:45:59.824 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 17:45:59.826 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:46:17.542 - behave - INFO - OCR completed and CSV updated
+2025-04-21 17:46:17.549 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 17:46:17.550 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:46:17.552 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 17:46:17.553 - behave - WARNING - Failed to save screenshot
+2025-04-21 17:46:17.947 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:04:27.822 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:04:27.826 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:04:29.012 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:04:30.471 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:04:55.104 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:04:55.106 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:05:12.969 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:05:12.979 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 18:05:12.980 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:05:12.981 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 18:05:12.982 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:05:13.389 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:08:12.489 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:08:12.492 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:08:13.729 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:08:15.003 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:08:39.585 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:08:39.587 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:08:58.290 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:08:58.308 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 18:08:58.309 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:08:58.726 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:11:22.739 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:11:22.742 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:11:23.905 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:11:25.412 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:11:50.221 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:11:50.222 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:12:08.067 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:12:08.080 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 18:12:08.081 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:12:08.384 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 18:12:08.385 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:12:08.809 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:27:54.684 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:27:54.700 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:28:04.392 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:28:05.900 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:28:52.866 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:28:52.867 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:29:14.846 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:29:14.861 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 18:29:14.863 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:29:15.210 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 18:29:15.211 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:29:15.657 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:30:08.639 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:30:08.645 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:30:09.965 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:30:11.383 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:30:38.446 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:30:38.448 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:31:00.232 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:31:00.244 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 18:31:00.246 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:31:00.644 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 18:31:00.646 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:31:01.124 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:35:48.245 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:35:48.250 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:35:49.450 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:35:50.723 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:36:16.731 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:36:16.733 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:36:36.792 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:36:36.812 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 18:36:36.814 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:36:37.196 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:38:12.998 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:38:13.003 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:38:14.212 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:38:15.624 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:38:42.239 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:38:42.241 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:39:02.250 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:39:02.260 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-21 18:39:02.260 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:39:02.603 - behave - ERROR - Step Failed: And I click using label "Start Order" and perform OCR
+2025-04-21 18:39:02.607 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:39:03.035 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:42:23.298 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:42:23.303 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:42:24.510 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:42:25.976 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:42:51.821 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:42:51.823 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:43:31.464 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:43:31.486 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 18:43:31.488 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:43:31.865 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:48:05.586 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:48:05.591 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:48:06.816 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:48:08.228 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:48:33.693 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:48:33.695 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:49:13.807 - behave - INFO - OCR completed and CSV updated
+2025-04-21 18:49:13.828 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 18:49:13.830 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:49:14.222 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:53:43.804 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:53:43.809 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:53:45.026 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:53:46.393 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:54:12.916 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:54:12.917 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:54:53.705 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 18:55:14.422 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 18:55:14.423 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:55:14.982 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 18:57:45.419 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 18:57:45.424 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 18:57:46.678 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 18:57:47.944 - behave - INFO - Detected page navigation/reload
+2025-04-21 18:58:14.457 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 18:58:14.459 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:58:56.285 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 18:59:17.503 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 18:59:17.504 - behave - WARNING - Failed to save screenshot
+2025-04-21 18:59:17.893 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 19:04:23.118 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 19:04:23.123 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 19:04:24.334 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 19:04:25.664 - behave - INFO - Detected page navigation/reload
+2025-04-21 19:04:52.187 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 19:04:52.188 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:05:34.022 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 19:05:55.111 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 19:05:55.113 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:05:55.503 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 19:09:46.363 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 19:09:46.368 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 19:09:47.550 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 19:09:48.810 - behave - INFO - Detected page navigation/reload
+2025-04-21 19:10:15.713 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 19:10:15.714 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:10:57.845 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 19:11:19.376 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 19:11:19.377 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:11:19.777 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 19:16:01.448 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 19:16:01.453 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 19:16:02.631 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 19:16:03.955 - behave - INFO - Detected page navigation/reload
+2025-04-21 19:16:28.863 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 19:16:28.865 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:16:48.448 - behave - INFO - OCR completed and CSV updated
+2025-04-21 19:16:48.471 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 19:16:48.472 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:16:48.866 - behave - INFO - Browser resources cleaned up successfully
+2025-04-21 19:21:15.377 - behave - INFO - Detected screen size: 1280x720
+2025-04-21 19:21:15.382 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-21 19:21:16.602 - behave - INFO - Browser initialized successfully for scenario
+2025-04-21 19:21:17.877 - behave - INFO - Detected page navigation/reload
+2025-04-21 19:21:21.416 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-21 19:21:21.418 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:21:22.310 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-21 19:21:22.312 - behave - WARNING - Failed to save screenshot
+2025-04-21 19:21:22.380 - behave - WARNING - Failed to process navigation OCR
+2025-04-21 19:21:22.747 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:29:43.727 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:29:43.734 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:29:45.468 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:29:46.784 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:30:50.943 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:30:50.946 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:31:40.145 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:31:40.171 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-22 10:31:40.173 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:37:51.422 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:37:51.457 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:38:03.450 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:38:04.961 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:38:59.075 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:38:59.078 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:39:49.095 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:39:49.118 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-22 10:39:49.120 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:39:49.765 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:41:19.685 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:41:19.694 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:41:21.063 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:41:22.377 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:42:16.040 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:42:16.043 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:43:05.022 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:43:05.058 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-22 10:43:05.060 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:43:05.504 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:44:47.365 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:44:47.371 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:44:48.728 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:44:50.057 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:44:58.235 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:44:58.237 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:45:07.645 - behave - WARNING - Failed to process navigation OCR
+2025-04-22 10:45:08.046 - behave - ERROR - Step Failed: And I see the label "Start Order"
+2025-04-22 10:45:08.048 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:45:08.524 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:46:25.492 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:46:25.499 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:46:27.029 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:46:28.465 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:46:39.315 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:46:39.318 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:46:45.258 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:46:45.275 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 10:46:45.277 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:46:52.203 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-22 10:46:52.205 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:46:52.596 - behave - ERROR - Step Failed: And I click using label "Login" and perform OCR
+2025-04-22 10:46:52.597 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:46:53.067 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:47:32.173 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:47:32.179 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:47:33.462 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:47:34.809 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:47:44.165 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:47:44.167 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:47:50.632 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:47:50.647 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 10:47:50.649 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:47:57.649 - behave - INFO - Step Passed: When I click using label "x" and perform OCR
+2025-04-22 10:47:57.651 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:47:58.029 - behave - ERROR - Step Failed: And I click using label "Login" and perform OCR
+2025-04-22 10:47:58.030 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:47:58.476 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:50:48.567 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:50:48.574 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:50:49.849 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:50:51.216 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:51:00.934 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:51:00.937 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:51:06.856 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:51:06.872 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 10:51:06.874 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:51:07.254 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-22 10:51:07.260 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:51:07.838 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:53:23.455 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:53:23.461 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:53:24.742 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:53:26.043 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:53:34.840 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:53:34.842 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:53:40.453 - behave - WARNING - Failed to process navigation OCR
+2025-04-22 10:53:40.469 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 10:53:40.471 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:53:40.803 - behave - ERROR - Step Failed: When I click using label "Start Order" and perform OCR
+2025-04-22 10:53:40.805 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:53:41.338 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 10:58:07.946 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 10:58:07.957 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 10:58:09.250 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 10:58:10.586 - behave - INFO - Detected page navigation/reload
+2025-04-22 10:59:07.210 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 10:59:07.212 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:59:55.488 - behave - INFO - OCR completed and CSV updated
+2025-04-22 10:59:55.503 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 10:59:55.506 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:59:56.033 - behave - ERROR - Step Failed: When I click using label "x" and perform OCR
+2025-04-22 10:59:56.034 - behave - WARNING - Failed to save screenshot
+2025-04-22 10:59:56.519 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 11:24:47.976 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 11:24:47.984 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 11:24:49.289 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 11:24:50.725 - behave - INFO - Detected page navigation/reload
+2025-04-22 11:25:48.290 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 11:25:48.292 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:26:36.539 - behave - INFO - OCR completed and CSV updated
+2025-04-22 11:26:36.557 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 11:26:36.559 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:27:24.956 - behave - INFO - Step Passed: When I click using label "Start Order" and perform OCR
+2025-04-22 11:27:24.959 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:28:14.820 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-22 11:28:14.823 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:28:22.092 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-22 11:28:22.099 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:28:28.403 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-22 11:28:28.406 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:29:19.518 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-22 11:29:19.521 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:29:19.558 - behave - INFO - Detected page navigation/reload
+2025-04-22 11:29:19.726 - behave - WARNING - Navigation handler error: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-04-22 11:29:20.017 - behave - INFO - Browser resources cleaned up successfully
+2025-04-22 11:29:53.226 - behave - INFO - Detected screen size: 1280x720
+2025-04-22 11:29:53.236 - behave - INFO - Starting Scenario: Successful form filling and submission
+2025-04-22 11:29:54.514 - behave - INFO - Browser initialized successfully for scenario
+2025-04-22 11:29:55.882 - behave - INFO - Detected page navigation/reload
+2025-04-22 11:30:52.838 - behave - INFO - Step Passed: Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+2025-04-22 11:30:52.841 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:31:41.191 - behave - INFO - OCR completed and CSV updated
+2025-04-22 11:31:41.206 - behave - INFO - Step Passed: And I see the label "Start Order"
+2025-04-22 11:31:41.208 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:32:30.294 - behave - INFO - Step Passed: When I click using label "Start Order" and perform OCR
+2025-04-22 11:32:30.296 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:33:19.136 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-22 11:33:19.139 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:33:26.325 - behave - INFO - Step Passed: When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+2025-04-22 11:33:26.331 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:33:32.709 - behave - INFO - Step Passed: And I enter "Testing@1234" using label "Enter Password"
+2025-04-22 11:33:32.712 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:34:24.068 - behave - INFO - Step Passed: And I click using label "Login" and perform OCR
+2025-04-22 11:34:24.070 - behave - WARNING - Failed to save screenshot
+2025-04-22 11:34:24.124 - behave - INFO - Detected page navigation/reload
+2025-04-22 11:34:24.287 - behave - WARNING - Navigation handler error: Page.wait_for_timeout: Target page, context or browser has been closed
+2025-04-22 11:34:24.592 - behave - INFO - Browser resources cleaned up successfully

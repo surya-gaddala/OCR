@@ -1,0 +1,11 @@
+Feature: User form interactions using OCR-based automation # features/login.feature:69
+
+  Scenario: Successful form filling and submission                                     # features/login.feature:71
+    Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR # features/steps/login_steps.py:31
+    And I see the label "Start Order"                                                  # features/steps/login_steps.py:768
+    When I click using label "Start Order" and perform OCR                             # features/steps/login_steps.py:315
+    And I click using label "Login" and perform OCR                                    # features/steps/login_steps.py:315
+    When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"            # features/steps/login_steps.py:270
+    And I enter "Testing@1234" using label "Enter Password"                            # features/steps/login_steps.py:270
+    And I click using label "Login" and perform OCR                                    # features/steps/login_steps.py:315
+

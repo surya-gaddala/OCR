@@ -5,6 +5,10 @@ from behave import given  # You might want to use @when instead of @given for th
 import time
 from configparser import ConfigParser
 import difflib
+from playwright.sync_api import sync_playwright
+from coordinate_automation import CoordinateAutomation
+import os
+from datetime import datetime
 
 # Import helper functions
 # Assuming environment.py added 'src' to sys.path
@@ -31,7 +35,7 @@ def step_navigate_and_ocr(context: 'Context', url: str):
     page: 'Page' = context.page
     config: ConfigParser = context.config
     logger.info(f"Navigating to: {url}")
-    timeout = config.getint('Playwright', 'navigation_timeout', fallback=60000)
+    timeout = config.getint('Playwright', 'navigation_timeout', fallback=30000)  # Reduced from 60000
 
     def attempt_navigation():
         try:
@@ -42,12 +46,12 @@ def step_navigate_and_ocr(context: 'Context', url: str):
             logger.warning(f"Navigation attempt failed: {e}")
             return False
 
-    max_attempts = 3
+    max_attempts = 2  # Reduced from 3
     for attempt in range(max_attempts):
         if attempt_navigation():
             break
         logger.info(f"Retrying navigation to {url} (Attempt {attempt + 2}/{max_attempts})...")
-        page.wait_for_timeout(2000)
+        page.wait_for_timeout(1000)  # Reduced from 2000
         if attempt == max_attempts - 1:
             logger.error(f"Failed to navigate to {url} after {max_attempts} attempts.")
             raise Exception(f"Navigation to {url} failed after {max_attempts} attempts.")
@@ -79,9 +83,30 @@ def scroll_to_element(context, bbox, element_type='element', confidence=None):
         element_center_x = bbox['X'] + (bbox['Width'] / 2)
         element_center_y = bbox['Y'] + (bbox['Height'] / 2)
         
-        # Calculate scroll position to center the element
-        scroll_x = element_center_x - (viewport_width / 2)
-        scroll_y = element_center_y - (viewport_height / 2)
+        # First try to find scrollable container
+        scrollable_container = context.page.evaluate("""
+            () => {
+                // Common selectors for scrollable containers in ordering systems
+                const selectors = [
+                    'div[class*="modal"]',
+                    'div[class*="content"]',
+                    'div[class*="container"]',
+                    'div[class*="main"]',
+                    'div[class*="scroll"]'
+                ];
+                
+                for (const selector of selectors) {
+                    const elements = Array.from(document.querySelectorAll(selector));
+                    const scrollable = elements.find(el => {
+                        const style = window.getComputedStyle(el);
+                        const overflow = style.overflow + style.overflowY;
+                        return overflow.includes('scroll') || overflow.includes('auto');
+                    });
+                    if (scrollable) return scrollable;
+                }
+                return null;
+            }
+        """)
         
         # Add enhanced visual feedback and debugging styles
         context.page.evaluate("""
@@ -89,98 +114,42 @@ def scroll_to_element(context, bbox, element_type='element', confidence=None):
                 const style = document.createElement('style');
                 style.textContent = `
                     @keyframes pulse {
-                        0% { transform: scale(1); opacity: 0.3; }
-                        50% { transform: scale(1.05); opacity: 0.6; }
-                        100% { transform: scale(1); opacity: 0.3; }
+                        0% { transform: scale(1); opacity: 0.6; }
+                        50% { transform: scale(1.02); opacity: 0.8; }
+                        100% { transform: scale(1); opacity: 0.6; }
                     }
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-                    @keyframes fadeOut {
-                        from { opacity: 1; }
-                        to { opacity: 0; }
-                    }
-                    @keyframes success {
-                        0% { transform: scale(1); }
-                        50% { transform: scale(1.2); }
-                        100% { transform: scale(1); }
+                    @keyframes glow {
+                        0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+                        50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+                        100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
                     }
                     .automation-highlight {
                         position: absolute;
-                        border: 3px solid #4CAF50;
-                        background-color: rgba(76, 175, 80, 0.1);
+                        border: 3px solid #FF0000;
+                        background-color: rgba(255, 0, 0, 0.1);
                         z-index: 9999;
                         pointer-events: none;
-                        animation: pulse 2s infinite, fadeIn 0.3s ease-out;
+                        animation: pulse 2s infinite, glow 2s infinite;
                     }
-                    .automation-highlight::before {
-                        content: '';
+                    .automation-target {
                         position: absolute;
-                        top: -10px;
-                        left: -10px;
-                        right: -10px;
-                        bottom: -10px;
-                        border: 2px dashed #4CAF50;
-                        animation: pulse 2s infinite;
-                        opacity: 0.5;
-                    }
-                    .automation-highlight::after {
-                        content: '↓';
-                        position: absolute;
-                        top: -30px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        color: #4CAF50;
-                        font-size: 24px;
-                        font-weight: bold;
-                        animation: fadeIn 0.3s ease-out;
-                    }
-                    .automation-debug {
-                        position: absolute;
-                        background: rgba(0, 0, 0, 0.8);
-                        color: white;
-                        padding: 5px;
-                        font-family: monospace;
-                        font-size: 12px;
-                        border-radius: 3px;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background-color: rgba(255, 0, 0, 0.7);
+                        transform: translate(-50%, -50%);
                         z-index: 10000;
                         pointer-events: none;
-                    }
-                    .automation-confidence {
-                        position: absolute;
-                        right: -5px;
-                        top: -5px;
-                        background: #FF5722;
-                        color: white;
-                        padding: 2px 5px;
-                        border-radius: 3px;
-                        font-size: 10px;
-                        z-index: 10001;
-                    }
-                    .automation-focus-ring {
-                        position: absolute;
-                        border: 2px solid #2196F3;
-                        border-radius: 3px;
-                        pointer-events: none;
-                        z-index: 9998;
-                    }
-                    .automation-success {
-                        animation: success 0.5s ease-out;
-                        border-color: #4CAF50 !important;
-                    }
-                    .automation-error {
-                        border-color: #F44336 !important;
                         animation: pulse 1s infinite;
                     }
-                    .automation-aria-label {
+                    .automation-label {
                         position: absolute;
-                        background: rgba(0, 0, 0, 0.8);
+                        background-color: rgba(0, 0, 0, 0.8);
                         color: white;
-                        padding: 5px;
-                        border-radius: 3px;
+                        padding: 4px 8px;
+                        border-radius: 4px;
                         font-size: 12px;
-                        z-index: 10002;
+                        z-index: 10001;
                         pointer-events: none;
                         white-space: nowrap;
                     }
@@ -189,141 +158,99 @@ def scroll_to_element(context, bbox, element_type='element', confidence=None):
             }
         """)
         
-        # Add the highlight element with enhanced features
-        context.page.evaluate("""
-            (bbox, elementType, confidence) => {
+        # Add visual highlight with operation type label
+        highlight_elements = context.page.evaluate("""
+            (bbox, elementType) => {
+                // Create highlight box
                 const highlight = document.createElement('div');
                 highlight.className = 'automation-highlight';
                 highlight.style.left = bbox.X + 'px';
                 highlight.style.top = bbox.Y + 'px';
                 highlight.style.width = bbox.Width + 'px';
                 highlight.style.height = bbox.Height + 'px';
-                highlight.id = 'automation-highlight';
                 
-                // Add debug information
-                const debug = document.createElement('div');
-                debug.className = 'automation-debug';
-                debug.style.left = bbox.X + 'px';
-                debug.style.top = (bbox.Y - 20) + 'px';
-                debug.textContent = `X: ${bbox.X}, Y: ${bbox.Y}, W: ${bbox.Width}, H: ${bbox.Height}`;
-                debug.id = 'automation-debug';
+                // Create target indicator
+                const target = document.createElement('div');
+                target.className = 'automation-target';
+                target.style.left = (bbox.X + bbox.Width / 2) + 'px';
+                target.style.top = (bbox.Y + bbox.Height / 2) + 'px';
                 
-                // Add confidence indicator if available
-                if (confidence !== null) {
-                    const conf = document.createElement('div');
-                    conf.className = 'automation-confidence';
-                    conf.textContent = `${Math.round(confidence * 100)}%`;
-                    highlight.appendChild(conf);
+                // Create operation label
+                const label = document.createElement('div');
+                label.className = 'automation-label';
+                label.style.left = (bbox.X + bbox.Width / 2) + 'px';
+                label.style.top = (bbox.Y - 25) + 'px';
+                label.style.transform = 'translateX(-50%)';
+                
+                // Set label text based on element type
+                switch(elementType) {
+                    case 'text input':
+                        label.textContent = '✎ Text Input';
+                        break;
+                    case 'button':
+                        label.textContent = '👆 Click';
+                        break;
+                    case 'radio button':
+                        label.textContent = '⚪ Radio Select';
+                        break;
+                    case 'checkbox':
+                        label.textContent = '☐ Checkbox';
+                        break;
+                    case 'slider':
+                        label.textContent = '↔ Slider';
+                        break;
+                    default:
+                        label.textContent = 'Interact';
                 }
-                
-                // Add focus ring for keyboard navigation
-                const focusRing = document.createElement('div');
-                focusRing.className = 'automation-focus-ring';
-                focusRing.style.left = (bbox.X - 2) + 'px';
-                focusRing.style.top = (bbox.Y - 2) + 'px';
-                focusRing.style.width = (bbox.Width + 4) + 'px';
-                focusRing.style.height = (bbox.Height + 4) + 'px';
-                focusRing.id = 'automation-focus-ring';
-                
-                // Add ARIA label
-                const ariaLabel = document.createElement('div');
-                ariaLabel.className = 'automation-aria-label';
-                ariaLabel.style.left = bbox.X + 'px';
-                ariaLabel.style.top = (bbox.Y + bbox.Height + 5) + 'px';
-                ariaLabel.textContent = `${elementType} element`;
-                ariaLabel.id = 'automation-aria-label';
                 
                 document.body.appendChild(highlight);
-                document.body.appendChild(debug);
-                document.body.appendChild(focusRing);
-                document.body.appendChild(ariaLabel);
-            }
-        """, bbox, element_type, confidence)
-        
-        # Smooth scroll with enhanced feedback
-        steps = 20
-        for i in range(steps):
-            t = i / steps
-            ease = 2 * t * t if t < 0.5 else -1 + (4 - 2 * t) * t
-            
-            current_scroll_x = (scroll_x * ease)
-            current_scroll_y = (scroll_y * ease)
-            context.page.mouse.wheel(current_scroll_x, current_scroll_y)
-            context.page.wait_for_timeout(25)
-        
-        # Wait for scroll to complete
-        context.page.wait_for_timeout(300)
-        
-        # Add interaction feedback based on element type
-        context.page.evaluate("""
-            (elementType) => {
-                const highlight = document.getElementById('automation-highlight');
-                if (highlight) {
-                    let feedbackText = '';
-                    let color = '#4CAF50';
-                    
-                    switch(elementType) {
-                        case 'text input':
-                            feedbackText = '✎';
-                            color = '#2196F3';
-                            break;
-                        case 'button':
-                            feedbackText = '↖';
-                            color = '#FF9800';
-                            break;
-                        case 'slider':
-                            feedbackText = '↔';
-                            color = '#9C27B0';
-                            break;
-                        case 'checkbox':
-                            feedbackText = '✓';
-                            color = '#E91E63';
-                            break;
-                        case 'radio button':
-                            feedbackText = '●';
-                            color = '#00BCD4';
-                            break;
-                        default:
-                            feedbackText = '↓';
-                    }
-                    
-                    highlight.style.borderColor = color;
-                    highlight.style.backgroundColor = color.replace(')', ', 0.1)').replace('rgb', 'rgba');
-                    highlight.setAttribute('data-feedback', feedbackText);
-                    
-                    // Update ARIA label
-                    const ariaLabel = document.getElementById('automation-aria-label');
-                    if (ariaLabel) {
-                        ariaLabel.textContent = `${elementType} element - ${feedbackText}`;
-                    }
-                }
-            }
-        """, element_type)
-        
-        # Show success state briefly
-        context.page.evaluate("""
-            () => {
-                const highlight = document.getElementById('automation-highlight');
-                if (highlight) {
-                    highlight.classList.add('automation-success');
-                }
-            }
-        """)
-        
-        # Keep elements visible for a bit longer
-        context.page.wait_for_timeout(1500)
-        
-        # Remove elements with fade out
-        context.page.evaluate("""
-            () => {
-                const elements = [
-                    'automation-highlight',
-                    'automation-debug',
-                    'automation-focus-ring',
-                    'automation-aria-label'
-                ];
+                document.body.appendChild(target);
+                document.body.appendChild(label);
                 
-                elements.forEach(id => {
+                return [highlight.id, target.id, label.id];
+            }
+        """, bbox, element_type)
+        
+        # Perform scroll
+        if scrollable_container:
+            logger.info("Found scrollable container, scrolling within container")
+            context.page.evaluate("""
+                (container, elementY) => {
+                    const containerRect = container.getBoundingClientRect();
+                    const scrollTop = elementY - containerRect.height / 3;
+                    container.scrollTo({
+                        top: scrollTop,
+                        behavior: 'smooth'
+                    });
+                }
+            """, scrollable_container, element_center_y)
+        else:
+            logger.info("No scrollable container found, using window scroll")
+            # Calculate scroll position to center the element
+            scroll_y = element_center_y - (viewport_height / 3)  # Position element at 1/3 from top
+            
+            # Smooth scroll
+            steps = 20
+            current_scroll = context.page.evaluate("() => window.pageYOffset")
+            scroll_distance = scroll_y - current_scroll
+            
+            for i in range(steps):
+                progress = i / steps
+                ease = 2 * progress * progress if progress < 0.5 else -1 + (4 - 2 * progress) * progress
+                current_step = current_scroll + (scroll_distance * ease)
+                context.page.evaluate(f"window.scrollTo(0, {current_step})")
+                context.page.wait_for_timeout(25)
+        
+        # Wait for scroll to settle
+        context.page.wait_for_timeout(500)
+        
+        # Keep highlight visible for interaction
+        context.page.wait_for_timeout(2000)
+        
+        # Remove highlights with fade out
+        context.page.evaluate("""
+            (elementIds) => {
+                elementIds.forEach(id => {
                     const element = document.getElementById(id);
                     if (element) {
                         element.style.animation = 'fadeOut 0.5s ease-out';
@@ -331,20 +258,12 @@ def scroll_to_element(context, bbox, element_type='element', confidence=None):
                     }
                 });
             }
-        """)
+        """, highlight_elements)
         
         logger.info(f"Scrolled to {element_type} at position ({element_center_x}, {element_center_y})")
         return True
+        
     except Exception as e:
-        # Show error state
-        context.page.evaluate("""
-            () => {
-                const highlight = document.getElementById('automation-highlight');
-                if (highlight) {
-                    highlight.classList.add('automation-error');
-                }
-            }
-        """)
         logger.warning(f"Error during scroll to {element_type}: {str(e)}")
         return False
 
@@ -354,6 +273,9 @@ def step_enter_text(context: 'Context', value: str, target_label: str):
     config: ConfigParser = context.config
     logger.info(f"Entering '{value}' using label '{target_label}'")
     try:
+        # Take screenshot before entering text
+        save_screenshot(page, config, f"before_enter_{target_label}")
+        
         ocr_results = load_coordinates_csv(config)
         if not ocr_results:
             raise Exception("No OCR results loaded from CSV to find label.")
@@ -369,26 +291,53 @@ def step_enter_text(context: 'Context', value: str, target_label: str):
         
         # Click the element to focus it
         click_coordinates(page, target_element, context=context)
+        page.wait_for_timeout(500)  # Wait for focus
         
-        # Fill the value directly without any keyboard shortcuts
+        # Clear existing text if any
+        page.keyboard.press("Control+A")
+        page.keyboard.press("Backspace")
+        page.wait_for_timeout(500)
+        
+        # Fill the value
         fill_coordinates(page, target_element, value, context=context, clear_first=False)
+        page.wait_for_timeout(1000)  # Wait for text to be entered
         
-        logger.info(f"Successfully entered '{value}' for label '{target_label}'.")
+        # Take screenshot after entering text
+        save_screenshot(page, config, f"after_enter_{target_label}")
+        
+        # Verify the text was entered
+        page.wait_for_timeout(1000)
+        logger.info(f"Successfully entered '{value}' for label '{target_label}'")
     except Exception as e:
         logger.exception(f"Failed to enter '{value}' for label '{target_label}': {e}")
         raise
 
-@when('I click using label "{target_label}"')
-@step('I click using label "{target_label}"')
-def step_click_by_label(context: 'Context', target_label: str):
+@when('I click using label "{target_label}" and perform OCR')
+@step('I click using label "{target_label}" and perform OCR')
+def step_click_and_perform_ocr(context: 'Context', target_label: str):
     page: 'Page' = context.page
     config: ConfigParser = context.config
-    logger.info(f"Attempting to click element labeled '{target_label}'")
+    logger.info(f"Attempting to click element labeled '{target_label}' and perform OCR")
+    
     try:
+        # Load existing OCR results
         ocr_results = load_coordinates_csv(config)
         if not ocr_results:
-            raise Exception("No OCR results loaded from CSV to find label.")
-        target_element = find_element_by_label(config, target_label, ocr_results, element_type='button', context=context, last_interacted_bbox=getattr(context, 'last_element_bbox', None))
+            logger.warning("No OCR results found, taking new screenshot and running OCR...")
+            screenshot_path = save_screenshot(page, config, f"before_click_{target_label}")
+            if screenshot_path:
+                processed_image = preprocess_image(config, screenshot_path)
+                if processed_image is not None:
+                    ocr_results = run_ocr(config, processed_image)
+                    save_coordinates_csv(config, ocr_results)
+                else:
+                    raise Exception("Failed to preprocess image for OCR")
+            else:
+                raise Exception("Failed to save screenshot for OCR")
+
+        # Try to find the target element with more lenient matching
+        target_element = find_element_by_label(config, target_label, ocr_results, element_type='button', context=context)
+        
         if not target_element:
             save_screenshot(page, config, f"LABEL_NOT_FOUND_{target_label}")
             raise Exception(f"Label '{target_label}' not found in OCR results with sufficient confidence.")
@@ -396,49 +345,38 @@ def step_click_by_label(context: 'Context', target_label: str):
         # Scroll to element with highlighting
         scroll_to_element(context, target_element, 'button')
         
-        context.last_element_bbox = {'X': target_element['X'], 'Y': target_element['Y'], 'Width': target_element['Width'], 'Height': target_element['Height'], 'Label': target_label}
+        # Set bbox for highlighting before click
+        context.last_element_bbox = {
+            'X': target_element['X'],
+            'Y': target_element['Y'],
+            'Width': target_element['Width'],
+            'Height': target_element['Height']
+        }
+
+        # Perform the click
         click_coordinates(page, target_element, context=context)
         logger.info(f"Successfully clicked label '{target_label}'.")
-        page.wait_for_load_state('networkidle', timeout=10000)
-        logger.info("Performing OCR scan after click...")
-        screenshot_path = save_screenshot(page, config, f"after_click_{target_label}")
-        if screenshot_path:
-            processed_image = preprocess_image(config, screenshot_path)
-            if processed_image is not None:
-                ocr_results = run_ocr(config, processed_image)
-                save_coordinates_csv(config, ocr_results)
-    except Exception as e:
-        logger.exception(f"Failed to click label '{target_label}': {e}")
-        raise
 
-@when(u'I see the label "{target_label}"')
-def step_see_label(context: 'Context', target_label: str):
-    page: 'Page' = context.page
-    config: ConfigParser = context.config
-    logger.info(f"Checking for label '{target_label}' on the page...")
-    try:
-        ocr_results = load_coordinates_csv(config)
-        if not ocr_results:
-            logger.warning("No OCR results in CSV. Re-running OCR...")
-            screenshot_path = save_screenshot(page, config, f"before_see_label_{target_label}")
-            if screenshot_path:
-                processed_image = preprocess_image(config, screenshot_path)
-                if processed_image is not None:
-                    ocr_results = run_ocr(config, processed_image)
-                    save_coordinates_csv(config, ocr_results)
-                else:
-                    raise Exception("Failed to preprocess screenshot for OCR.")
-            else:
-                raise Exception("Failed to save screenshot for OCR.")
+        # Wait for potential navigation and re-run OCR only if needed
+        try:
+            page.wait_for_load_state('networkidle', timeout=5000)  # Reduced from 10000
+            # Only re-run OCR if the page actually changed
+            if page.url != context.last_url:
+                logger.info("Page changed, re-running OCR...")
+                screenshot_path = save_screenshot(page, config, f"after_click_{target_label}")
+                if screenshot_path:
+                    processed_image = preprocess_image(config, screenshot_path)
+                    if processed_image is not None:
+                        ocr_results = run_ocr(config, processed_image)
+                        save_coordinates_csv(config, ocr_results)
+                        logger.info("OCR updated successfully after click.")
+                context.last_url = page.url
+        except Exception as e:
+            logger.warning(f"No navigation detected after click: {e}")
 
-        target_element = find_element_by_label(config, target_label, ocr_results, element_type='label', context=context)
-        if target_element is None:
-            save_screenshot(page, config, f"LABEL_NOT_FOUND_{target_label}")
-            raise AssertionError(f"Label '{target_label}' was not found in OCR results.")
-        context.last_element_bbox = {'X': target_element['X'], 'Y': target_element['Y'], 'Width': target_element['Width'], 'Height': target_element['Height']}
-        logger.info(f"Label '{target_label}' found: '{target_element['Label']}' at X={target_element['X']}, Y={target_element['Y']}")
     except Exception as e:
-        logger.exception(f"Failed to verify label '{target_label}': {e}")
+        logger.exception(f"Failed to click label '{target_label}' and perform OCR: {e}")
+        save_screenshot(page, config, f"error_click_{target_label}")
         raise
 
 @when('I wait for {seconds} seconds')
@@ -512,22 +450,132 @@ def step_select_radio(context: 'Context', target_label: str):
     config: ConfigParser = context.config
     logger.info(f"Attempting to select radio button using label '{target_label}'")
     try:
+        # Take screenshot before selection
+        save_screenshot(page, config, f"before_radio_{target_label}")
+        
         ocr_results = load_coordinates_csv(config)
         if not ocr_results:
             raise Exception("No OCR results loaded from CSV to find label.")
+            
+        # Find the radio button element
         target_element = find_element_by_label(config, target_label, ocr_results, element_type='radio', context=context)
         if not target_element:
             save_screenshot(page, config, f"LABEL_NOT_FOUND_{target_label}")
             raise Exception(f"Label '{target_label}' not found in OCR results with sufficient confidence.")
         
-        # Scroll to element with highlighting
+        # First, scroll the label into view with some padding
+        viewport_height = page.viewport_size['height']
+        element_y = target_element['Y']
+        
+        # Calculate scroll position to center the element with padding
+        scroll_y = max(0, element_y - (viewport_height / 3))  # Position element at 1/3 from top
+        
+        # Smooth scroll to the element
+        logger.info(f"Scrolling to radio button label at Y={element_y}")
+        steps = 20
+        current_scroll = page.evaluate("() => window.pageYOffset")
+        scroll_distance = scroll_y - current_scroll
+        
+        for i in range(steps):
+            progress = i / steps
+            ease = 2 * progress * progress if progress < 0.5 else -1 + (4 - 2 * progress) * progress
+            current_step = current_scroll + (scroll_distance * ease)
+            page.evaluate(f"window.scrollTo(0, {current_step})")
+            page.wait_for_timeout(25)
+        
+        # Wait for scroll to settle
+        page.wait_for_timeout(500)
+        
+        # Add visual highlight for the radio button area
         scroll_to_element(context, target_element, 'radio button')
         
-        context.last_element_bbox = {'X': target_element['X'], 'Y': target_element['Y'], 'Width': target_element['Width'], 'Height': target_element['Height']}
-        click_coordinates(page, target_element, context=context)
-        logger.info(f"Successfully selected radio button for label '{target_label}'.")
+        # Calculate click coordinates - adjust slightly to the left of the label
+        # This helps ensure we click the actual radio input element
+        adjusted_x = target_element['X'] - 20  # Move 20 pixels left of the label
+        adjusted_y = target_element['Y'] + (target_element['Height'] / 2)
+        
+        # Try clicking up to 3 times with verification
+        max_attempts = 3
+        for attempt in range(max_attempts):
+            logger.info(f"Radio button click attempt {attempt + 1}/{max_attempts}")
+            
+            # Add visual feedback before click
+            page.evaluate("""
+                (x, y) => {
+                    const dot = document.createElement('div');
+                    dot.style.position = 'absolute';
+                    dot.style.left = (x - 5) + 'px';
+                    dot.style.top = (y - 5) + 'px';
+                    dot.style.width = '10px';
+                    dot.style.height = '10px';
+                    dot.style.backgroundColor = 'red';
+                    dot.style.borderRadius = '50%';
+                    dot.style.zIndex = '9999';
+                    dot.style.boxShadow = '0 0 10px rgba(255, 0, 0, 0.5)';
+                    document.body.appendChild(dot);
+                    setTimeout(() => dot.remove(), 1000);
+                }
+            """, adjusted_x, adjusted_y)
+            
+            # Ensure we're still scrolled to the right position before clicking
+            current_scroll = page.evaluate("() => window.pageYOffset")
+            if abs(current_scroll - scroll_y) > 50:  # If we've drifted more than 50px
+                logger.info("Readjusting scroll position before click")
+                page.evaluate(f"window.scrollTo(0, {scroll_y})")
+                page.wait_for_timeout(300)
+            
+            # Click the radio button
+            page.mouse.click(adjusted_x, adjusted_y)
+            page.wait_for_timeout(500)  # Wait for any animations
+            
+            # Take verification screenshot
+            screenshot_path = save_screenshot(page, config, f"verify_radio_{target_label}_attempt_{attempt + 1}")
+            
+            # Wait for potential state change
+            page.wait_for_timeout(1000)
+            
+            # Try to verify if radio is selected using JavaScript
+            try:
+                is_checked = page.evaluate("""
+                    (x, y) => {
+                        const element = document.elementFromPoint(x, y);
+                        if (element && element.type === 'radio') {
+                            return element.checked;
+                        }
+                        // Try to find nearby radio input
+                        const radio = document.querySelector(`input[type="radio"][name="${element?.name}"]`);
+                        return radio ? radio.checked : false;
+                    }
+                """, adjusted_x, adjusted_y)
+                
+                if is_checked:
+                    logger.info(f"Radio button successfully selected on attempt {attempt + 1}")
+                    break
+                else:
+                    logger.warning(f"Radio button not verified as selected on attempt {attempt + 1}")
+            except Exception as e:
+                logger.warning(f"Failed to verify radio button state: {e}")
+            
+            if attempt < max_attempts - 1:
+                page.wait_for_timeout(500)  # Wait before next attempt
+        
+        # Final verification screenshot
+        save_screenshot(page, config, f"after_radio_{target_label}")
+        
+        # Update last interacted element
+        context.last_element_bbox = {
+            'X': adjusted_x,
+            'Y': adjusted_y,
+            'Width': target_element['Width'],
+            'Height': target_element['Height']
+        }
+        
+        logger.info(f"Completed radio button selection process for '{target_label}'")
+        
     except Exception as e:
         logger.exception(f"Failed to select radio button for label '{target_label}': {e}")
+        # Take error screenshot
+        save_screenshot(page, config, f"error_radio_{target_label}")
         raise
 
 @when(u'I drag element labeled "{source_label}" and drop on "{target_label}"')
@@ -659,79 +707,6 @@ def step_drag_and_drop(context, source_label, target_label):
     if screenshot_path:
         logger.info(f"Screenshot saved after drag and drop: {screenshot_path}")
 
-@when('I click using label "{target_label}" and perform OCR')
-def step_click_and_perform_ocr(context: 'Context', target_label: str):
-    page: 'Page' = context.page
-    config: ConfigParser = context.config
-    logger.info(f"Attempting to click element labeled '{target_label}' and perform OCR")
-    try:
-        # Load existing OCR results
-        ocr_results = load_coordinates_csv(config)
-        if not ocr_results:
-            logger.warning("No OCR results loaded from CSV. Re-running initial OCR...")
-            screenshot_path = save_screenshot(page, config, f"before_click_{target_label}")
-            if screenshot_path:
-                processed_image = preprocess_image(config, screenshot_path)
-                if processed_image is not None:
-                    ocr_results = run_ocr(config, processed_image)
-                    save_coordinates_csv(config, ocr_results)
-                else:
-                    raise Exception("Failed to preprocess screenshot for initial OCR.")
-            else:
-                raise Exception("Failed to save screenshot for initial OCR.")
-
-        # Find the target element
-        target_element = find_element_by_label(config, target_label, ocr_results, element_type='button', context=context)
-        if not target_element:
-            save_screenshot(page, config, f"LABEL_NOT_FOUND_{target_label}")
-            raise Exception(f"Label '{target_label}' not found in OCR results with sufficient confidence.")
-
-        # Set bbox for highlighting before click
-        context.last_element_bbox = {'X': target_element['X'], 'Y': target_element['Y'], 'Width': target_element['Width'], 'Height': target_element['Height']}
-        save_screenshot(page, config, f"before_click_{target_label}")
-
-        # Perform the click
-        click_coordinates(page, target_element, context=context)
-        logger.info(f"Successfully clicked label '{target_label}'.")
-
-        # Wait for potential navigation and re-run OCR
-        try:
-            page.wait_for_load_state('domcontentloaded', timeout=10000)
-            logger.info("Page load detected after click, re-running OCR...")
-            screenshot_path = save_screenshot(page, config, f"after_click_{target_label}")
-            if screenshot_path:
-                processed_image = preprocess_image(config, screenshot_path)
-                if processed_image is not None:
-                    ocr_results = run_ocr(config, processed_image)
-                    save_coordinates_csv(config, ocr_results)
-                    logger.info("OCR updated successfully after click.")
-                else:
-                    logger.warning("Failed to preprocess image after click.")
-            else:
-                logger.warning("Failed to save screenshot after click.")
-        except Exception as e:
-            logger.warning(f"No navigation detected after click: {e}. Forcing OCR re-run...")
-            screenshot_path = save_screenshot(page, config, f"force_ocr_after_click_{target_label}")
-            if screenshot_path:
-                processed_image = preprocess_image(config, screenshot_path)
-                if processed_image is not None:
-                    ocr_results = run_ocr(config, processed_image)
-                    save_coordinates_csv(config, ocr_results)
-                    logger.info("Forced OCR update completed.")
-                else:
-                    logger.warning("Forced OCR preprocess failed.")
-
-        # Update bbox for highlighting after OCR (optional, based on new results)
-        if ocr_results:
-            target_element = find_element_by_label(config, target_label, ocr_results, element_type='button', context=context)
-            if target_element:
-                context.last_element_bbox = {'X': target_element['X'], 'Y': target_element['Y'], 'Width': target_element['Width'], 'Height': target_element['Height']}
-                logger.debug(f"Updated bbox after OCR: {context.last_element_bbox}")
-
-    except Exception as e:
-        logger.exception(f"Failed to click label '{target_label}' and perform OCR: {e}")
-        raise
-
 @given(u'I wait for 5 seconds for the page to load')
 def step_impl(context):
     """Wait for the page to load and stabilize."""
@@ -756,44 +731,176 @@ def step_impl(context):
         raise
 
 @then(u'I see the label "{label_text}"')
-def step_impl(context, label_text):
-    """Verify that a specific label is visible on the page."""
+@given(u'I see the label "{label_text}"')
+def verify_label(context: 'Context', label_text: str):
+    """Verify that a specific label is visible on the page.
+    This step can be used with both Given and Then keywords.
+    """
+    page: 'Page' = context.page
+    config: ConfigParser = context.config
+    logger.info(f"Verifying label: {label_text}")
+    
     try:
-        context.logger.info(f"Verifying label: {label_text}")
-        
-        # Get coordinates from CSV
-        coordinates = get_coordinates_from_csv(context.config, label_text)
-        if not coordinates:
-            # Take a screenshot for debugging
-            save_screenshot(context.page, context.config, f"label_not_found_{label_text}")
-            raise AssertionError(f"Label '{label_text}' not found in coordinates CSV")
-        
-        # Take a screenshot for verification
-        screenshot_path = save_screenshot(context.page, context.config, f"verify_label_{label_text}")
-        if not screenshot_path:
-            raise AssertionError("Failed to save verification screenshot")
-        
-        # Perform OCR on the screenshot
-        processed_image = preprocess_image(context.config, screenshot_path)
-        if processed_image is None:
-            raise AssertionError("Failed to preprocess image for verification")
-        
-        ocr_results = run_ocr(context.config, processed_image)
+        # Load existing OCR results
+        ocr_results = load_coordinates_csv(config)
         if not ocr_results:
-            raise AssertionError("No OCR results found for verification")
+            logger.warning("No OCR results found, taking new screenshot and running OCR...")
+            screenshot_path = save_screenshot(page, config, f"verify_label_{label_text}")
+            if screenshot_path:
+                processed_image = preprocess_image(config, screenshot_path)
+                if processed_image is not None:
+                    ocr_results = run_ocr(config, processed_image)
+                    save_coordinates_csv(config, ocr_results)
+                else:
+                    raise Exception("Failed to preprocess image for OCR")
+            else:
+                raise Exception("Failed to save screenshot for OCR")
+
+        # Find the label in OCR results
+        target_element = find_element_by_label(config, label_text, ocr_results, element_type='text', context=context)
+        if not target_element:
+            # Try fuzzy matching if exact match fails
+            matches = find_elements_by_label(config, label_text, ocr_results)
+            if matches:
+                target_element = matches[0]  # Use first match
+                logger.info(f"Found label '{label_text}' using fuzzy matching")
+            else:
+                save_screenshot(page, config, f"label_not_found_{label_text}")
+                raise AssertionError(f"Label '{label_text}' not found on page")
+
+        # Scroll to element for visual verification
+        scroll_to_element(context, target_element, 'text')
         
-        # Check if the label text is found in OCR results
-        label_found = any(
-            difflib.SequenceMatcher(None, result['text'].lower(), label_text.lower()).ratio() 
-            >= context.config.getfloat('Matching', 'label_match_threshold', fallback=0.6)
-            for result in ocr_results
-        )
+        # Take verification screenshot
+        save_screenshot(page, config, f"verified_label_{label_text}")
         
-        if not label_found:
-            raise AssertionError(f"Label '{label_text}' not found on page")
-        
-        context.logger.info(f"Label '{label_text}' verified successfully")
+        logger.info(f"Successfully verified label: {label_text}")
         
     except Exception as e:
-        context.logger.error(f"Error verifying label: {str(e)}")
+        logger.error(f"Failed to verify label '{label_text}': {str(e)}")
+        save_screenshot(page, config, f"error_verify_label_{label_text}")
+        raise AssertionError(f"Failed to verify label '{label_text}': {str(e)}")
+
+@when('I select "{option}" from dropdown labeled "{dropdown_label}"')
+def step_select_from_dropdown(context: 'Context', option: str, dropdown_label: str):
+    """Select an option from a dropdown menu using OCR-detected coordinates."""
+    page: 'Page' = context.page
+    config: ConfigParser = context.config
+    logger.info(f"Attempting to select '{option}' from dropdown labeled '{dropdown_label}'")
+    
+    try:
+        # Load existing OCR results
+        ocr_results = load_coordinates_csv(config)
+        if not ocr_results:
+            logger.warning("No OCR results found, taking new screenshot and running OCR...")
+            screenshot_path = save_screenshot(page, config, f"before_dropdown_{dropdown_label}")
+            if screenshot_path:
+                processed_image = preprocess_image(config, screenshot_path)
+                if processed_image is not None:
+                    ocr_results = run_ocr(config, processed_image)
+                    save_coordinates_csv(config, ocr_results)
+                else:
+                    raise Exception("Failed to preprocess image for OCR")
+            else:
+                raise Exception("Failed to save screenshot for OCR")
+
+        # First find the dropdown label
+        dropdown_element = find_element_by_label(config, dropdown_label, ocr_results, element_type='text', context=context)
+        if not dropdown_element:
+            # Try fuzzy matching
+            matches = find_elements_by_label(config, dropdown_label, ocr_results)
+            if matches:
+                dropdown_element = matches[0]
+                logger.info(f"Found dropdown label '{dropdown_label}' using fuzzy matching")
+            else:
+                save_screenshot(page, config, f"dropdown_not_found_{dropdown_label}")
+                raise AssertionError(f"Dropdown label '{dropdown_label}' not found on page")
+
+        # Scroll to dropdown
+        scroll_to_element(context, dropdown_element, 'dropdown')
+        
+        # Click the dropdown to open it
+        click_coordinates(page, dropdown_element, context=context)
+        page.wait_for_timeout(500)  # Reduced from 1000
+        
+        # Find and click the option
+        option_element = find_element_by_label(config, option, ocr_results, element_type='text', context=context)
+        if not option_element:
+            # Try fuzzy matching for option
+            matches = find_elements_by_label(config, option, ocr_results)
+            if matches:
+                option_element = matches[0]
+                logger.info(f"Found option '{option}' using fuzzy matching")
+            else:
+                save_screenshot(page, config, f"option_not_found_{option}")
+                raise AssertionError(f"Option '{option}' not found in dropdown")
+        
+        # Click the option
+        click_coordinates(page, option_element, context=context)
+        logger.info(f"Selected option '{option}' from dropdown '{dropdown_label}'")
+        
+        # Wait for any animations to complete
+        page.wait_for_timeout(500)  # Reduced from 1000
+
+    except Exception as e:
+        logger.exception(f"Failed to select '{option}' from dropdown '{dropdown_label}': {e}")
+        save_screenshot(page, config, f"error_dropdown_{dropdown_label}_{option}")
+        raise
+
+def before_scenario(context, scenario):
+    """Initialize page for each scenario using existing browser context."""
+    try:
+        # Create new page in existing browser context
+        context.page = context.browser_context.new_page()
+        context.automation = CoordinateAutomation(context.page)
+        context.last_url = None  # Track last URL for change detection
+        logger.info("New page created for scenario")
+    except Exception as e:
+        logger.error(f"Failed to initialize page for scenario: {e}")
+        raise
+
+def after_scenario(context, scenario):
+    """Cleanup after each scenario."""
+    try:
+        # Close only the page, not the browser
+        if hasattr(context, 'page'):
+            context.page.close()
+        logger.info("Page closed successfully")
+    except Exception as e:
+        logger.error(f"Failed to cleanup after scenario: {e}")
+        raise
+
+@given('I am on the login page')
+def step_impl(context):
+    context.automation.navigate("https://example.com/login")
+
+@when('I enter username "{username}"')
+def step_impl(context, username):
+    context.automation.type("Username", username)
+
+@when('I enter password "{password}"')
+def step_impl(context, password):
+    context.automation.type("Password", password)
+
+@when('I click the "{button}" button')
+def step_impl(context, button):
+    context.automation.click(button)
+    context.automation.check_page_change()
+
+@then('I should be redirected to the dashboard')
+def step_impl(context):
+    # Add verification logic here
+    context.automation.check_page_change()
+
+@given('I maximize the browser window')
+def step_maximize_window(context: 'Context'):
+    """Maximize the browser window."""
+    try:
+        page: 'Page' = context.page
+        logger.info("Maximizing browser window")
+        page.set_viewport_size({"width": 1920, "height": 1080})  # Full HD resolution
+        context.browser.windows()[0].maximize()
+        logger.info("Browser window maximized successfully")
+    except Exception as e:
+        logger.error(f"Failed to maximize browser window: {e}")
         raise

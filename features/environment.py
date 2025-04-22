@@ -127,6 +127,7 @@ from datetime import datetime
 import traceback
 from logging.handlers import RotatingFileHandler
 import json
+from playwright.sync_api import sync_playwright
 
 # Calculate key directory paths
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -247,13 +248,37 @@ def before_all(context):
         context.config = load_config()
         context.project_root = PROJECT_ROOT
         context.logger = setup_logging(context.config)
-        context.logger.info("Configuration loaded successfully.")
+        
+        # Get system screen size (default to 1920x1080 if can't determine)
+        try:
+            import tkinter as tk
+            root = tk.Tk()
+            screen_width = root.winfo_screenwidth()
+            screen_height = root.winfo_screenheight()
+            root.destroy()
+        except:
+            screen_width = 1920
+            screen_height = 1080
+            
+        # Store screen dimensions in context for reuse
+        context.screen_size = {
+            'width': screen_width,
+            'height': screen_height
+        }
+        
+        context.logger.info(f"Detected screen size: {screen_width}x{screen_height}")
+        
     except Exception as e:
         logger.exception(
-            "CRITICAL: Failed to load configuration",
+            "CRITICAL: Failed to initialize environment",
             extra={"context": {"error": str(e), "traceback": traceback.format_exc()}}
         )
         raise
+
+def after_all(context):
+    """Runs after all features are executed."""
+    # No browser cleanup needed here as it's handled in after_scenario
+    pass
 
 def before_scenario(context, scenario):
     """Runs before each scenario starts."""
@@ -263,20 +288,22 @@ def before_scenario(context, scenario):
     )
     
     try:
-        max_retries = context.config.getint('Retry', 'max_retries', fallback=3)
-        retry_delay = context.config.getint('Retry', 'retry_delay', fallback=2)
-        max_timeout = context.config.getint('Retry', 'max_retry_timeout', fallback=30)
-        
-        def init_browser_with_retry():
-            return init_browser(context.config)
-        
-        context.playwright, context.browser, context.browser_context, context.page = retry_operation(
-            init_browser_with_retry,
-            max_retries,
-            retry_delay,
-            max_timeout
+        # Initialize browser for each scenario
+        context.playwright = sync_playwright().start()
+        context.browser = context.playwright.chromium.launch(
+            headless=False,
+            args=['--start-maximized']
         )
-
+        
+        # Create context with stored screen size
+        context.browser_context = context.browser.new_context(
+            viewport=context.screen_size,
+            no_viewport=True
+        )
+        
+        # Create new page
+        context.page = context.browser_context.new_page()
+        
         def handle_navigation(page):
             """Enhanced navigation handler with detailed logging"""
             context.logger.info(
@@ -285,14 +312,8 @@ def before_scenario(context, scenario):
             )
             
             try:
-                page.wait_for_load_state(
-                    'domcontentloaded',
-                    timeout=context.config.getint('Wait', 'page_load_timeout', fallback=30000)
-                )
-                
-                page.wait_for_timeout(
-                    context.config.getint('Wait', 'navigation_wait', fallback=5000)
-                )
+                page.wait_for_load_state('domcontentloaded')
+                page.wait_for_timeout(2000)  # Wait for 2 seconds after load
                 
                 screenshot_path = save_screenshot(page, context.config, f"post_navigation_{scenario.name}")
                 if screenshot_path:
@@ -301,31 +322,18 @@ def before_scenario(context, scenario):
                         ocr_results = run_ocr(context.config, processed_image)
                         if ocr_results:
                             save_coordinates_csv(context.config, ocr_results)
-                            context.logger.info(
-                                "OCR completed and CSV updated",
-                                extra={"context": {
-                                    "screenshot": str(screenshot_path),
-                                    "ocr_results_count": len(ocr_results)
-                                }}
-                            )
+                            context.logger.info("OCR completed and CSV updated")
                             return
-                context.logger.warning(
-                    "Failed to process navigation OCR",
-                    extra={"context": {"screenshot_path": str(screenshot_path)}}
-                )
+                context.logger.warning("Failed to process navigation OCR")
             except Exception as e:
-                context.logger.warning(
-                    "Failed to re-run OCR after navigation",
-                    extra={"context": {
-                        "error": str(e),
-                        "traceback": traceback.format_exc()
-                    }}
-                )
+                context.logger.warning(f"Navigation handler error: {str(e)}")
 
         context.page.on(
             "framenavigated",
             lambda frame: handle_navigation(context.page) if frame == context.page.main_frame else None
         )
+        
+        context.logger.info("Browser initialized successfully for scenario")
         
     except Exception as e:
         context.logger.exception(
@@ -340,29 +348,19 @@ def before_scenario(context, scenario):
 
 def after_scenario(context, scenario):
     """Runs after each scenario completes."""
-    status = scenario.status.name
-    context.logger.info(
-        f"Finished Scenario: {scenario.name}",
-        extra={"context": {
-            "status": status,
-            "duration": scenario.duration if hasattr(scenario, 'duration') else None
-        }}
-    )
-    
-    if hasattr(context, 'playwright'):
-        try:
-            close_browser(context.playwright, context.browser)
-            context.logger.info("Browser resources cleaned up successfully")
-        except Exception as e:
-            context.logger.error(
-                "Error during browser cleanup",
-                extra={"context": {
-                    "error": str(e),
-                    "traceback": traceback.format_exc()
-                }}
-            )
-    else:
-        context.logger.warning("Browser resources not found for cleanup")
+    try:
+        if hasattr(context, 'page') and context.page:
+            context.page.close()
+        if hasattr(context, 'browser_context') and context.browser_context:
+            context.browser_context.close()
+        if hasattr(context, 'browser') and context.browser:
+            context.browser.close()
+        if hasattr(context, 'playwright') and context.playwright:
+            context.playwright.stop()
+        
+        context.logger.info("Browser resources cleaned up successfully")
+    except Exception as e:
+        context.logger.error(f"Error during browser cleanup: {str(e)}")
 
 def after_step(context, step):
     """Runs after each step within a scenario."""

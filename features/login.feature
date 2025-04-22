@@ -1,13 +1,13 @@
-Feature: Coordinate-Based Form Automation using OCR
+# Feature: Login Automation using OCR
 
-  Scenario: Successful login using coordinates detected by OCR
-    Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
-    # Then I see the page title as "My Account"
-    When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
-    And I enter "Test@123" using label "Password"
-    And I click using label "Login" and perform OCR
-    And I click using label "Tablets" and perform OCR
-    And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
+# Scenario: Successful login using coordinates detected by OCR
+#   Given I navigate to "https://tutorialsninja.com/demo/index.php?route=account/login" and perform OCR
+#   # Then I see the page title as "My Account"
+#   When I enter "suryaiiit.517@gmail.com" using label "E-Mail Address"
+#   And I enter "Test@123" using label "Password"
+#   And I click using label "Login" and perform OCR
+#   And I click using label "Tablets" and perform OCR
+#   And I click using label "Samsung Galaxy Tab 10.1" and perform OCR
     # And I click using label "Add to Cart" and perform OCR
     # And I click using label "Shopping Cart" and perform OCR
     # And I click using label "Checkout" and perform OCR
@@ -65,3 +65,24 @@ Feature: Coordinate-Based Form Automation using OCR
 #     # And I click using label "Submit"
 #     # Then I wait for 10 seconds
 #     # And I see the label "Form submitted successfully"
+
+Feature: User form interactions using OCR-based automation
+
+  Scenario: Successful form filling and submission
+    Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR
+    And I see the label "Start Order"
+    When I click using label "Start Order" and perform OCR
+    And I click using label "Login" and perform OCR
+    When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address"
+    And I enter "Testing@1234" using label "Enter Password"
+    And I click using label "Login" and perform OCR
+    And I see the label "Meatless BYO"
+    And I click using label "Add" and perform OCR
+
+# Feature: User form interactions using OCR-based automation
+
+#   Scenario:
+#     Given I navigate to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" and perform OCR
+#     And I enter "Admin" using label "Username"
+#     And I enter "admin123" using label "Password"
+#     And I click using label "Login" and perform OCR

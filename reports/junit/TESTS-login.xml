@@ -1,0 +1,16 @@
+<testsuite name="login.User form interactions using OCR-based automation" tests="1" errors="0" failures="0" skipped="0" time="269.498772" timestamp="2025-04-22T11:34:24.593746" hostname="DESKTOP-DP86RFE"><testcase classname="login.User form interactions using OCR-based automation" name="Successful form filling and submission" status="passed" time="269.498772"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Successful form filling and submission
+    Given I navigate to "https://onlineorderingdemo.com/fratoskitchen" and perform OCR ... passed in 58.295s
+    And I see the label "Start Order" ... passed in 48.364s
+    When I click using label "Start Order" and perform OCR ... passed in 49.085s
+    And I click using label "Login" and perform OCR ... passed in 48.839s
+    When I enter "mohan.sridhar@lavu.com" using label "Enter Email Address" ... passed in 7.184s
+    And I enter "Testing@1234" using label "Enter Password" ... passed in 6.377s
+    And I click using label "Login" and perform OCR ... passed in 51.354s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
